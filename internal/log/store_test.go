@@ -2,6 +2,7 @@ package log
 
 import (
 	"bytes"
+	"fmt"
 	"os"
 	"testing"
 )
@@ -144,4 +145,46 @@ func testReadAt(t *testing.T, s *store) {
 
 	}
 
+}
+
+func TestStoreClose(t *testing.T) {
+	s, f := setupStore(t)
+	defer os.Remove(f.Name())
+
+	var err error
+
+	_, _, err = s.Append(write)
+	if err != nil {
+		t.Errorf("oh oh")
+	}
+
+	f, beforeSize, err := openFile(f.Name())
+	fmt.Println("beforeSize, ", beforeSize)
+	if err != nil {
+		t.Errorf("oh no")
+	}
+
+	err = s.Close()
+	if err != nil {
+		t.Errorf("oh oh ")
+	}
+
+	_, afterSize, err := openFile(f.Name())
+
+	if afterSize <= beforeSize {
+		t.Errorf("oh no")
+	}
+	fmt.Println("afterSize, ", afterSize)
+}
+
+func openFile(name string) (file *os.File, size int64, err error) {
+	f, err := os.OpenFile(name, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0644)
+	if err != nil {
+		return nil, 0, err
+	}
+	fi, err := f.Stat()
+	if err != nil {
+		return nil, 0, err
+	}
+	return f, fi.Size(), nil
 }
