@@ -11,6 +11,7 @@ import (
 var enc = binary.BigEndian
 
 // how many bytes
+// this would be uint64
 const lenWidth = 8
 
 type store struct {
@@ -41,13 +42,16 @@ func (s *store) Append(p []byte) (n uint64, pos uint64, err error) {
 
 	pos = s.size
 
+	// len
 	if err := binary.Write(s.buf, enc, uint64(len(p))); err != nil {
 		return 0, 0, err
 	}
+	// data
 	w, err := s.buf.Write(p)
 	if err != nil {
 		return 0, 0, err
 	}
+	// 8 bytes of len
 	w += lenWidth
 	s.size += uint64(w)
 	return uint64(w), pos, nil
