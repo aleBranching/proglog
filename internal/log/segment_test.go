@@ -2,7 +2,6 @@ package log
 
 import (
 	"bytes"
-	"fmt"
 	api "github.com/aleBranching/proglog/api/v1"
 	"os"
 	"testing"
@@ -20,7 +19,7 @@ func TestSegment(t *testing.T) {
 	c := Config{}
 	c.Segment.MaxStoreBytes = 1024
 	c.Segment.MaxIndexBytes = entWidth * 3
-	s, err := NewSegment(tempDir, uint64(16), c)
+	s, err := newSegment(tempDir, uint64(16), c)
 	if s.nextOffset != uint64(16) {
 		t.Errorf("something gone wong")
 	}
@@ -58,7 +57,7 @@ func TestSegment(t *testing.T) {
 	c.Segment.MaxStoreBytes = uint64(len(want.Value) * 3)
 	c.Segment.MaxIndexBytes = 1024
 
-	s, err = NewSegment(tempDir, 16, c)
+	s, err = newSegment(tempDir, 16, c)
 	if err != nil {
 		t.Errorf("can't create segment")
 	}
@@ -70,7 +69,7 @@ func TestSegment(t *testing.T) {
 	if err != nil {
 		t.Errorf("can't remove")
 	}
-	s, err = NewSegment(tempDir, 16, c)
+	s, err = newSegment(tempDir, 16, c)
 	if err != nil {
 		t.Errorf("can't create segment")
 	}
@@ -79,22 +78,4 @@ func TestSegment(t *testing.T) {
 		t.Errorf("should not be maxed")
 	}
 
-}
-func TestSomething(t *testing.T) {
-	tempDir, err := os.MkdirTemp("", "example")
-	if err != nil {
-		fmt.Errorf("aaa")
-		return
-	}
-	defer os.RemoveAll(tempDir)
-	fmt.Println(tempDir)
-	dirLS, err := os.ReadDir(tempDir)
-	if err != nil {
-		fmt.Errorf("aaa")
-		return
-	}
-
-	for _, file := range dirLS {
-		fmt.Println("file", file)
-	}
 }

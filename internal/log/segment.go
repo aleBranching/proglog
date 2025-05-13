@@ -15,7 +15,7 @@ type segmnent struct {
 	config                 Config
 }
 
-func NewSegment(dir string, baseOffset uint64, c Config) (*segmnent, error) {
+func newSegment(dir string, baseOffset uint64, c Config) (*segmnent, error) {
 	s := &segmnent{
 		config:     c,
 		baseOffset: baseOffset,
