@@ -2,6 +2,7 @@ package log
 
 import (
 	"bytes"
+	"errors"
 	api "github.com/aleBranching/proglog/api/v1"
 	"google.golang.org/protobuf/proto"
 	"io"
@@ -68,6 +69,14 @@ func testOutOfRangeErr(t *testing.T, log *Log) {
 	}
 	if read != nil {
 		t.Errorf("there is a record")
+	}
+	var apiErr api.ErrOffsetOutOfRange
+	worked := errors.As(err, &apiErr)
+	if !worked {
+		t.Errorf("couldn't assert")
+	}
+	if uint64(1) != apiErr.Offset {
+		t.Errorf("did not equal")
 	}
 
 }
