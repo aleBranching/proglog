@@ -1,7 +1,6 @@
 package log
 
 import (
-	api "github.com/aleBranching/proglog/api/v1"
 	"io"
 	"os"
 	"path"
@@ -9,6 +8,8 @@ import (
 	"strconv"
 	"strings"
 	"sync"
+
+	api "github.com/aleBranching/proglog/api/v1"
 )
 
 type Log struct {
@@ -85,7 +86,7 @@ func (l *Log) Read(off uint64) (*api.Record, error) {
 	defer l.mu.Unlock()
 	var s *segmnent
 	for _, segment := range l.segments {
-		if segment.baseOffset >= off && off < segment.nextOffset {
+		if segment.baseOffset <= off && off < segment.nextOffset {
 			s = segment
 			break
 		}

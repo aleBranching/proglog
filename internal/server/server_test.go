@@ -3,13 +3,14 @@ package server
 import (
 	"bytes"
 	"context"
+	"net"
+	"os"
+	"testing"
+
 	api "github.com/aleBranching/proglog/api/v1"
 	"github.com/aleBranching/proglog/internal/log"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/status"
-	"net"
-	"os"
-	"testing"
 )
 
 func TestServer(t *testing.T) {
@@ -154,7 +155,7 @@ func testConsumeTwice(t *testing.T, client api.LogClient, config *Config) {
 		t.Fatal("none match")
 	}
 	got := status.Code(err)
-	want := status.Code(api.ErrOffsetOutOfRange{}.GRPCStatus().Err())
+	want := status.Code(nil)
 	if got != want {
 		t.Fatalf("got err : %v , want: %v", got, want)
 	}

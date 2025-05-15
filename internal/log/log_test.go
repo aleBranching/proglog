@@ -3,26 +3,33 @@ package log
 import (
 	"bytes"
 	"errors"
-	api "github.com/aleBranching/proglog/api/v1"
-	"google.golang.org/protobuf/proto"
 	"io"
 	"os"
 	"testing"
+
+	api "github.com/aleBranching/proglog/api/v1"
+	"google.golang.org/protobuf/proto"
 )
 
 func TestLog(t *testing.T) {
 	scenarios := map[string]func(t *testing.T, log *Log){
-		"append and read":            testAppendRead,
-		"out of range read":          testOutOfRangeErr,
-		"init with existing segment": testInitExisting,
-		"reader":                     testReader,
-		"truncating":                 testTruncate,
+		"append and read":                     testAppendRead,
+		"out of range read":                   testOutOfRangeErr,
+		"init with existing segment":          testInitExisting,
+		"reader":                              testReader,
+		"truncating":                          testTruncate,
+		"append and read twice":               testAppendReadTwice,
+		"append and read twice Large segment": testAppendReadTwice,
 	}
 
 	for scenario, fn := range scenarios {
 		t.Run(scenario, func(t *testing.T) {
 			c := Config{}
-			c.Segment.MaxStoreBytes = 32
+			if scenario == "append and read twice Large segment" {
+				c.Segment.MaxStoreBytes = 1024
+			} else {
+				c.Segment.MaxStoreBytes = 32
+			}
 			dir, err := os.MkdirTemp("", "exampleLog")
 			defer os.RemoveAll(dir)
 			if err != nil {
@@ -59,6 +66,57 @@ func testAppendRead(t *testing.T, log *Log) {
 	}
 	if !bytes.Equal(readRecord.Value, recordToAppend.Value) {
 		t.Fatal("Should be equal")
+	}
+}
+func testAppendReadTwice(t *testing.T, log *Log) {
+
+	{
+
+		recordToAppend := &api.Record{
+			Value: []byte("Hello world"),
+		}
+		offA, err := log.Append(recordToAppend)
+		if err != nil {
+			t.Fatal("Can't append")
+		}
+		if offA != uint64(0) {
+			t.Fatal("Can't stop")
+		}
+		readRecord, err := log.Read(offA)
+		if err != nil {
+			t.Fatalf("Can't read")
+		}
+
+		if readRecord.Offset != offA {
+			t.Fatal("offset ain't right")
+		}
+		if !bytes.Equal(readRecord.Value, recordToAppend.Value) {
+			t.Fatal("Should be equal")
+		}
+	}
+	{
+
+		recordToAppend := &api.Record{
+			Value: []byte("Hello world 2"),
+		}
+		offA, err := log.Append(recordToAppend)
+		if err != nil {
+			t.Fatal("Can't append")
+		}
+		if offA != uint64(1) {
+			t.Fatal("Can't stop")
+		}
+		readRecord, err := log.Read(offA)
+		if err != nil {
+			t.Fatalf("Can't read")
+		}
+
+		if readRecord.Offset != offA {
+			t.Fatal("offset ain't right")
+		}
+		if !bytes.Equal(readRecord.Value, recordToAppend.Value) {
+			t.Fatal("Should be equal")
+		}
 	}
 }
 
