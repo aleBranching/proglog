@@ -18,7 +18,7 @@ func TestServer(t *testing.T) {
 		"Simple Produce, read": testProduceConsume,
 		"past boundaty ":       testConsumePastBoundary,
 		"test consume twice":   testConsumeTwice,
-		//"stream read":          testProduceConsumeStream,
+		"stream read":          testProduceConsumeStream,
 	}
 
 	for scenario, fn := range scenarios {
@@ -40,6 +40,9 @@ func setupTest(t *testing.T, fn func(*Config)) (client api.LogClient, cfg *Confi
 	clientOptions := []grpc.DialOption{grpc.WithInsecure()}
 	//client
 	cc, err := grpc.Dial(l.Addr().String(), clientOptions...)
+	if err != nil {
+		t.Fatal("no")
+	}
 	dir, err := os.MkdirTemp("", "server-test")
 	if err != nil {
 		t.Fatal("no")
