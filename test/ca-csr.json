@@ -1,0 +1,16 @@
+{
+    "CN" : "Aleksas Big CA", 
+    "key" : {
+        "algo" : "rsa",
+        "size" : 2048
+    },
+    "names" : [
+        {
+            "C" : "UK",
+            "L" : "PR",
+            "ST" : "Lancashire",
+            "O" : "Aleksas business",
+            "OU" : "CA Services"
+        }
+    ]
+}

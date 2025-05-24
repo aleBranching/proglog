@@ -1,0 +1,17 @@
+{
+    "CN" : "client",
+    "hosts" : [""],
+    "key" : {
+        "algo" : "rsa",
+        "size" : 2048
+    },
+    "names" : [
+        {
+            "C": "UK",
+            "ST": "Lancashire",
+            "L": "Preston",
+            "O" : "Aleksas business",
+            "OU" : "Distributed Services"
+        }
+    ]
+}
