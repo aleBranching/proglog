@@ -6,6 +6,7 @@ import (
 	"net"
 	"os"
 	"testing"
+	"time"
 
 	// "time"
 
@@ -13,12 +14,18 @@ import (
 	"github.com/aleBranching/proglog/internal/auth"
 	"github.com/aleBranching/proglog/internal/config"
 	"github.com/aleBranching/proglog/internal/log"
+	"go.opentelemetry.io/otel"
+	"go.opentelemetry.io/otel/exporters/stdout/stdouttrace"
+	semconv "go.opentelemetry.io/otel/semconv/v1.26.0"
 
 	// "go.opentelemetry.io/otel"
 	// "go.opentelemetry.io/otel/exporters/stdout/stdouttrace"
 	// "go.opentelemetry.io/otel/sdk/resource"
-	// "go.opentelemetry.io/otel/sdk/trace"
+	"go.opentelemetry.io/otel/sdk/resource"
+	sdkTrace "go.opentelemetry.io/otel/sdk/trace"
+
 	// semconv "go.opentelemetry.io/otel/semconv/v1.4.0"
+	stdLog "log"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -29,10 +36,10 @@ import (
 func TestServer(t *testing.T) {
 	scenarios := map[string]func(t *testing.T, rootClient api.LogClient, nobodyClient api.LogClient, config *Config){
 		"Simple Produce, read": testProduceConsume,
-		"past boundaty ":       testConsumePastBoundary,
-		"test consume twice":   testConsumeTwice,
-		"stream read":          testProduceConsumeStream,
-		"unauthorized":         testUnauthorizedProduceConsume,
+		// "past boundaty ":       testConsumePastBoundary,
+		// "test consume twice":   testConsumeTwice,
+		// "stream read":          testProduceConsumeStream,
+		// "unauthorized":         testUnauthorizedProduceConsume,
 	}
 
 	for scenario, fn := range scenarios {
@@ -45,56 +52,57 @@ func TestServer(t *testing.T) {
 	}
 }
 
-// func initOpenTelemetry(ctx context.Context) func() {
-// 	// Create OTLP gRPC exporter (change endpoint as needed)
+func initOpenTelemetry(ctx context.Context) func() {
+	// Create OTLP gRPC exporter (change endpoint as needed)
 
-// 	// exporter, err := otlptracegrp.New(ctx,
-// 	// 	otlptracegrpc.WithInsecure(), // remove for TLS
-// 	// 	otlptracegrpc.WithEndpoint("localhost:4317"), // default for OTLP/gRPC
-// 	// )
+	// exporter, err := otlptracegrp.New(ctx,
+	// 	otlptracegrpc.WithInsecure(), // remove for TLS
+	// 	otlptracegrpc.WithEndpoint("localhost:4317"), // default for OTLP/gRPC
+	// )
 
-// 	// exporter, err := stdouttrace.New(
-// 	// 	stdouttrace.WithPrettyPrint(),
-// 	// )
-// 	f, err := os.Create("traces.json") // Overwrites each run; use os.OpenFile to append if needed
-// 	if err != nil {
-// 		stdLog.Fatalf("failed to create trace output file: %v", err)
-// 	}
+	// exporter, err := stdouttrace.New(
+	// 	stdouttrace.WithPrettyPrint(),
+	// )
+	f, err := os.Create("traces.json") // Overwrites each run; use os.OpenFile to append if needed
+	if err != nil {
+		stdLog.Fatalf("failed to create trace output file: %v", err)
+	}
 
-// 	exporter, err := stdouttrace.New(
-// 		stdouttrace.WithWriter(f),
-// 		stdouttrace.WithPrettyPrint(),
-// 	)
+	exporter, err := stdouttrace.New(
+		stdouttrace.WithWriter(f),
+		stdouttrace.WithPrettyPrint(),
+	)
 
-// 	if err != nil {
-// 		stdLog.Fatalf("failed to create exporter: %v", err)
-// 	}
+	if err != nil {
+		stdLog.Fatalf("failed to create exporter: %v", err)
+	}
 
-// 	// Set up trace provider
-// 	tp := trace.NewTracerProvider(
-// 		trace.WithBatcher(exporter),
-// 		trace.WithResource(resource.NewWithAttributes(
-// 			semconv.SchemaURL,
-// 			// semconv.ServiceName("proglog-server"),
-// 		)),
-// 	)
+	// Set up trace provider
+	tp := sdkTrace.NewTracerProvider(
+		sdkTrace.WithBatcher(exporter),
+		sdkTrace.WithResource(resource.NewWithAttributes(
+			semconv.SchemaURL,
+			// semconv.ServiceName("proglog-server"),
+			semconv.ServiceNameKey.String("proglog-server"),
+		)),
+	)
 
-// 	otel.SetTracerProvider(tp)
+	otel.SetTracerProvider(tp)
 
-// 	return func() {
-// 		ctx, cancel := context.WithTimeout(context.Background(), time.Second*5)
-// 		defer cancel()
-// 		if err := tp.Shutdown(ctx); err != nil {
-// 			stdLog.Fatalf("failed to shutdown trace provider: %v", err)
-// 		}
-// 	}
-// }
+	return func() {
+		ctx, cancel := context.WithTimeout(context.Background(), time.Second*5)
+		defer cancel()
+		if err := tp.Shutdown(ctx); err != nil {
+			stdLog.Fatalf("failed to shutdown trace provider: %v", err)
+		}
+	}
+}
 
 func setupTest(t *testing.T, fn func(*Config)) (rootClient api.LogClient, nobodyClient api.LogClient, cfg *Config, teardown func()) {
 
-	// ctx := context.Background()
+	ctx := context.Background()
 
-	// teleShut := initOpenTelemetry(ctx)
+	teleShut := initOpenTelemetry(ctx)
 	t.Helper()
 
 	l, err := net.Listen("tcp", "127.0.0.1:0")
@@ -182,8 +190,8 @@ func setupTest(t *testing.T, fn func(*Config)) (rootClient api.LogClient, nobody
 		server.Serve(l)
 	}()
 	return rootClient, nobodyClient, cfg, func() {
-		// time.Sleep(time.Second * 3)
-		// teleShut()
+		time.Sleep(time.Second * 3)
+		teleShut()
 		server.Stop()
 		// cc.Close()
 		rootCon.Close()

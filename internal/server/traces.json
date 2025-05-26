@@ -1,0 +1,190 @@
+{
+	"Name": "log.v1.Log/Produce",
+	"SpanContext": {
+		"TraceID": "8e860609c0d7e01a8c25181274817963",
+		"SpanID": "b009e4565f567b52",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "00000000000000000000000000000000",
+		"SpanID": "0000000000000000",
+		"TraceFlags": "00",
+		"TraceState": "",
+		"Remote": true
+	},
+	"SpanKind": 2,
+	"StartTime": "2025-05-25T20:49:35.053890042+01:00",
+	"EndTime": "2025-05-25T20:49:35.054060899+01:00",
+	"Attributes": [
+		{
+			"Key": "rpc.service",
+			"Value": {
+				"Type": "STRING",
+				"Value": "log.v1.Log"
+			}
+		},
+		{
+			"Key": "rpc.method",
+			"Value": {
+				"Type": "STRING",
+				"Value": "Produce"
+			}
+		},
+		{
+			"Key": "rpc.system",
+			"Value": {
+				"Type": "STRING",
+				"Value": "grpc"
+			}
+		},
+		{
+			"Key": "server.address",
+			"Value": {
+				"Type": "STRING",
+				"Value": "127.0.0.1"
+			}
+		},
+		{
+			"Key": "server.port",
+			"Value": {
+				"Type": "INT64",
+				"Value": 59894
+			}
+		},
+		{
+			"Key": "rpc.grpc.status_code",
+			"Value": {
+				"Type": "INT64",
+				"Value": 0
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "proglog-server"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc",
+		"Version": "0.61.0",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc",
+		"Version": "0.61.0",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "log.v1.Log/Consume",
+	"SpanContext": {
+		"TraceID": "ebbf5758c6b717f05f717891965b7114",
+		"SpanID": "796b552377f99abe",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "00000000000000000000000000000000",
+		"SpanID": "0000000000000000",
+		"TraceFlags": "00",
+		"TraceState": "",
+		"Remote": true
+	},
+	"SpanKind": 2,
+	"StartTime": "2025-05-25T20:49:35.054219812+01:00",
+	"EndTime": "2025-05-25T20:49:35.054308872+01:00",
+	"Attributes": [
+		{
+			"Key": "rpc.service",
+			"Value": {
+				"Type": "STRING",
+				"Value": "log.v1.Log"
+			}
+		},
+		{
+			"Key": "rpc.method",
+			"Value": {
+				"Type": "STRING",
+				"Value": "Consume"
+			}
+		},
+		{
+			"Key": "rpc.system",
+			"Value": {
+				"Type": "STRING",
+				"Value": "grpc"
+			}
+		},
+		{
+			"Key": "server.address",
+			"Value": {
+				"Type": "STRING",
+				"Value": "127.0.0.1"
+			}
+		},
+		{
+			"Key": "server.port",
+			"Value": {
+				"Type": "INT64",
+				"Value": 59894
+			}
+		},
+		{
+			"Key": "rpc.grpc.status_code",
+			"Value": {
+				"Type": "INT64",
+				"Value": 0
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "proglog-server"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc",
+		"Version": "0.61.0",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc",
+		"Version": "0.61.0",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
