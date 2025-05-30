@@ -2,11 +2,15 @@ package server
 
 import (
 	"context"
+	stdLog "log"
+	"time"
 
 	api "github.com/aleBranching/proglog/api/v1"
 	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
 	grpc_auth "github.com/grpc-ecosystem/go-grpc-middleware/auth"
 	"go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"
+	"go.opentelemetry.io/otel"
+	"go.opentelemetry.io/otel/metric"
 
 	// "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"
 
@@ -48,7 +52,22 @@ type grpcServer struct {
 	*Config
 }
 
+var latencyHistogram metric.Float64Histogram
+
+func initLatencyMetric() {
+	meter := otel.Meter("proglog")
+	var err error
+	latencyHistogram, err = meter.Float64Histogram(
+		"server.request.latency",
+		metric.WithUnit("ms"),
+		metric.WithDescription("The latency of incoming requests"),
+	)
+	if err != nil {
+		stdLog.Fatalf("failed to create latency histogram: %v", err)
+	}
+}
 func NewGRPCServer(config *Config, opts ...grpc.ServerOption) (*grpc.Server, error) {
+	initLatencyMetric()
 	opts = append(opts,
 		grpc.StreamInterceptor(
 			grpc_middleware.ChainStreamServer(
@@ -77,6 +96,8 @@ func newgrpcServer(config *Config) (srv *grpcServer, err error) {
 }
 
 func (s *grpcServer) Produce(ctx context.Context, req *api.ProduceRequest) (*api.ProduceResponse, error) {
+	start := time.Now()
+
 	if err := s.Authorizer.Authorize(
 		subject(ctx),
 		objectWildcard,
@@ -88,6 +109,9 @@ func (s *grpcServer) Produce(ctx context.Context, req *api.ProduceRequest) (*api
 	if err != nil {
 		return nil, err
 	}
+	latency := time.Since(start)
+
+	latencyHistogram.Record(context.Background(), float64(latency))
 	return &api.ProduceResponse{Offset: offset}, nil
 
 }

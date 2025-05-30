@@ -1,8 +1,8 @@
 {
 	"Name": "log.v1.Log/Produce",
 	"SpanContext": {
-		"TraceID": "8e860609c0d7e01a8c25181274817963",
-		"SpanID": "b009e4565f567b52",
+		"TraceID": "6cf06ee5d0624cfa2ee0ae3b996453d7",
+		"SpanID": "3d7acfa229a227ac",
 		"TraceFlags": "01",
 		"TraceState": "",
 		"Remote": false
@@ -15,8 +15,8 @@
 		"Remote": true
 	},
 	"SpanKind": 2,
-	"StartTime": "2025-05-25T20:49:35.053890042+01:00",
-	"EndTime": "2025-05-25T20:49:35.054060899+01:00",
+	"StartTime": "2025-05-26T14:10:44.720302799+01:00",
+	"EndTime": "2025-05-26T14:10:44.720536976+01:00",
 	"Attributes": [
 		{
 			"Key": "rpc.service",
@@ -50,7 +50,7 @@
 			"Key": "server.port",
 			"Value": {
 				"Type": "INT64",
-				"Value": 59894
+				"Value": 59950
 			}
 		},
 		{
@@ -96,8 +96,8 @@
 {
 	"Name": "log.v1.Log/Consume",
 	"SpanContext": {
-		"TraceID": "ebbf5758c6b717f05f717891965b7114",
-		"SpanID": "796b552377f99abe",
+		"TraceID": "67ec66ab83a9f8ae1f67bec0d5f709a3",
+		"SpanID": "a444127d2729d61d",
 		"TraceFlags": "01",
 		"TraceState": "",
 		"Remote": false
@@ -110,8 +110,8 @@
 		"Remote": true
 	},
 	"SpanKind": 2,
-	"StartTime": "2025-05-25T20:49:35.054219812+01:00",
-	"EndTime": "2025-05-25T20:49:35.054308872+01:00",
+	"StartTime": "2025-05-26T14:10:44.720822138+01:00",
+	"EndTime": "2025-05-26T14:10:44.720918437+01:00",
 	"Attributes": [
 		{
 			"Key": "rpc.service",
@@ -145,7 +145,7 @@
 			"Key": "server.port",
 			"Value": {
 				"Type": "INT64",
-				"Value": 59894
+				"Value": 59950
 			}
 		},
 		{

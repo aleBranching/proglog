@@ -8,6 +8,7 @@ import (
 	"testing"
 	"time"
 
+	otelruntime "go.opentelemetry.io/contrib/instrumentation/runtime"
 	// "time"
 
 	api "github.com/aleBranching/proglog/api/v1"
@@ -15,12 +16,14 @@ import (
 	"github.com/aleBranching/proglog/internal/config"
 	"github.com/aleBranching/proglog/internal/log"
 	"go.opentelemetry.io/otel"
-	"go.opentelemetry.io/otel/exporters/stdout/stdouttrace"
+	"go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
+	"go.opentelemetry.io/otel/exporters/stdout/stdoutmetric"
 	semconv "go.opentelemetry.io/otel/semconv/v1.26.0"
 
 	// "go.opentelemetry.io/otel"
 	// "go.opentelemetry.io/otel/exporters/stdout/stdouttrace"
 	// "go.opentelemetry.io/otel/sdk/resource"
+	sdkmetric "go.opentelemetry.io/otel/sdk/metric"
 	"go.opentelemetry.io/otel/sdk/resource"
 	sdkTrace "go.opentelemetry.io/otel/sdk/trace"
 
@@ -36,10 +39,10 @@ import (
 func TestServer(t *testing.T) {
 	scenarios := map[string]func(t *testing.T, rootClient api.LogClient, nobodyClient api.LogClient, config *Config){
 		"Simple Produce, read": testProduceConsume,
-		// "past boundaty ":       testConsumePastBoundary,
-		// "test consume twice":   testConsumeTwice,
-		// "stream read":          testProduceConsumeStream,
-		// "unauthorized":         testUnauthorizedProduceConsume,
+		"past boundaty ":       testConsumePastBoundary,
+		"test consume twice":   testConsumeTwice,
+		"stream read":          testProduceConsumeStream,
+		"unauthorized":         testUnauthorizedProduceConsume,
 	}
 
 	for scenario, fn := range scenarios {
@@ -52,48 +55,119 @@ func TestServer(t *testing.T) {
 	}
 }
 
+// func initOpenTelemetry(ctx context.Context) func() {
+// 	// Create OTLP gRPC exporter (change endpoint as needed)
+
+// 	// exporter, err := otlptracegrp.New(ctx,
+// 	// 	otlptracegrpc.WithInsecure(), // remove for TLS
+// 	// 	otlptracegrpc.WithEndpoint("localhost:4317"), // default for OTLP/gRPC
+// 	// )
+
+// 	// exporter, err := stdouttrace.New(
+// 	// 	stdouttrace.WithPrettyPrint(),
+// 	// )
+// 	f, err := os.Create("traces.json") // Overwrites each run; use os.OpenFile to append if needed
+// 	if err != nil {
+// 		stdLog.Fatalf("failed to create trace output file: %v", err)
+// 	}
+
+// 	exporter, err := stdouttrace.New(
+// 		stdouttrace.WithWriter(f),
+// 		stdouttrace.WithPrettyPrint(),
+// 	)
+
+// 	if err != nil {
+// 		stdLog.Fatalf("failed to create exporter: %v", err)
+// 	}
+
+// 	// Set up trace provider
+// 	tp := sdkTrace.NewTracerProvider(
+// 		sdkTrace.WithBatcher(exporter),
+// 		sdkTrace.WithResource(resource.NewWithAttributes(
+// 			semconv.SchemaURL,
+// 			// semconv.ServiceName("proglog-server"),
+// 			semconv.ServiceNameKey.String("proglog-server"),
+// 		)),
+// 	)
+
+// 	otel.SetTracerProvider(tp)
+
+// 	return func() {
+// 		ctx, cancel := context.WithTimeout(context.Background(), time.Second*5)
+// 		defer cancel()
+// 		if err := tp.Shutdown(ctx); err != nil {
+// 			stdLog.Fatalf("failed to shutdown trace provider: %v", err)
+// 		}
+// 	}
+// }
+
 func initOpenTelemetry(ctx context.Context) func() {
-	// Create OTLP gRPC exporter (change endpoint as needed)
+	// Create file for traces
+	// f, err := os.Create("traces.json")
+	// if err != nil {
+	// 	stdLog.Fatalf("failed to create trace output file: %v", err)
+	// }
 
-	// exporter, err := otlptracegrp.New(ctx,
-	// 	otlptracegrpc.WithInsecure(), // remove for TLS
-	// 	otlptracegrpc.WithEndpoint("localhost:4317"), // default for OTLP/gRPC
-	// )
-
-	// exporter, err := stdouttrace.New(
+	// traceExporter, err := stdouttrace.New(
+	// 	stdouttrace.WithWriter(f),
 	// 	stdouttrace.WithPrettyPrint(),
 	// )
-	f, err := os.Create("traces.json") // Overwrites each run; use os.OpenFile to append if needed
-	if err != nil {
-		stdLog.Fatalf("failed to create trace output file: %v", err)
-	}
 
-	exporter, err := stdouttrace.New(
-		stdouttrace.WithWriter(f),
-		stdouttrace.WithPrettyPrint(),
+	traceExporter, err := otlptracegrpc.New(ctx,
+		otlptracegrpc.WithInsecure(),                 // disable TLS for local dev
+		otlptracegrpc.WithEndpoint("localhost:4317"), // default OTLP endpoint for Jaeger
 	)
 
 	if err != nil {
-		stdLog.Fatalf("failed to create exporter: %v", err)
+		stdLog.Fatalf("failed to create trace exporter: %v", err)
 	}
 
-	// Set up trace provider
+	// Create file for metrics
+	metricFile, err := os.Create("metrics.json")
+	if err != nil {
+		stdLog.Fatalf("failed to create metrics output file: %v", err)
+	}
+
+	metricExporter, err := stdoutmetric.New(
+		stdoutmetric.WithWriter(metricFile),
+		stdoutmetric.WithPrettyPrint(),
+	)
+	if err != nil {
+		stdLog.Fatalf("failed to create metric exporter: %v", err)
+	}
+
+	resource := resource.NewWithAttributes(
+		semconv.SchemaURL,
+		semconv.ServiceNameKey.String("proglog-server"),
+	)
+
+	// Set up Tracer Provider
 	tp := sdkTrace.NewTracerProvider(
-		sdkTrace.WithBatcher(exporter),
-		sdkTrace.WithResource(resource.NewWithAttributes(
-			semconv.SchemaURL,
-			// semconv.ServiceName("proglog-server"),
-			semconv.ServiceNameKey.String("proglog-server"),
-		)),
+		sdkTrace.WithBatcher(traceExporter),
+		sdkTrace.WithResource(resource),
 	)
-
 	otel.SetTracerProvider(tp)
 
+	// Set up Meter Provider
+	mp := sdkmetric.NewMeterProvider(
+		sdkmetric.WithReader(sdkmetric.NewPeriodicReader(metricExporter)),
+		sdkmetric.WithResource(resource),
+	)
+	otel.SetMeterProvider(mp)
+
+	// Enable runtime metrics (CPU, memory, GC)
+	if err := otelruntime.Start(otelruntime.WithMinimumReadMemStatsInterval(time.Second)); err != nil {
+		stdLog.Fatalf("failed to start runtime instrumentation: %v", err)
+	}
+
 	return func() {
-		ctx, cancel := context.WithTimeout(context.Background(), time.Second*5)
+		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 		defer cancel()
 		if err := tp.Shutdown(ctx); err != nil {
 			stdLog.Fatalf("failed to shutdown trace provider: %v", err)
+		}
+		if err := mp.Shutdown(ctx); err != nil {
+			stdLog.Fatalf("failed to shutdown meter provider: %v", err)
 		}
 	}
 }
@@ -103,6 +177,7 @@ func setupTest(t *testing.T, fn func(*Config)) (rootClient api.LogClient, nobody
 	ctx := context.Background()
 
 	teleShut := initOpenTelemetry(ctx)
+	initLatencyMetric()
 	t.Helper()
 
 	l, err := net.Listen("tcp", "127.0.0.1:0")
