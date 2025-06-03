@@ -34,7 +34,9 @@ type Config struct {
 	ServerTLSConfig *tls.Config
 	PeerTLSConfig   *tls.Config
 	DataDir         string
-	BindAddr        string
+	// for serf
+	BindAddr string
+	// for grpc
 	RCPPort         int
 	NodeName        string
 	StartJoindAddrs []string

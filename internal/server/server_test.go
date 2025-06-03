@@ -18,6 +18,7 @@ import (
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
 	"go.opentelemetry.io/otel/exporters/stdout/stdoutmetric"
+	"go.opentelemetry.io/otel/exporters/stdout/stdouttrace"
 	semconv "go.opentelemetry.io/otel/semconv/v1.26.0"
 
 	// "go.opentelemetry.io/otel"
@@ -112,15 +113,26 @@ func initOpenTelemetry(ctx context.Context) func() {
 	// 	stdouttrace.WithWriter(f),
 	// 	stdouttrace.WithPrettyPrint(),
 	// )
-
-	traceExporter, err := otlptracegrpc.New(ctx,
-		otlptracegrpc.WithInsecure(),                 // disable TLS for local dev
-		otlptracegrpc.WithEndpoint("localhost:4317"), // default OTLP endpoint for Jaeger
-	)
-
-	if err != nil {
-		stdLog.Fatalf("failed to create trace exporter: %v", err)
+	useGrpc := false
+	var err error
+	var traceExporter sdkTrace.SpanExporter
+	if useGrpc {
+		traceExporter, err = otlptracegrpc.New(ctx,
+			otlptracegrpc.WithInsecure(),
+			otlptracegrpc.WithEndpoint("localhost:4317"),
+		)
+		if err != nil {
+			stdLog.Fatalf("failed to create trace exporter: %v", err)
+		}
+	} else {
+		f, _ := os.Create("traces.json")
+		traceExporter, _ = stdouttrace.New(stdouttrace.WithWriter(f), stdouttrace.WithPrettyPrint())
 	}
+
+	// traceExporter, err := otlptracegrpc.New(ctx,
+	// 	otlptracegrpc.WithInsecure(),                 // disable TLS for local dev
+	// 	otlptracegrpc.WithEndpoint("localhost:4317"), // default OTLP endpoint for Jaeger
+	// )
 
 	// Create file for metrics
 	metricFile, err := os.Create("metrics.json")

@@ -25,8 +25,8 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-05-26T14:16:41.131706198+01:00",
-								"Time": "2025-05-26T14:16:44.146088799+01:00",
+								"StartTime": "2025-06-03T22:41:16.217669205+01:00",
+								"Time": "2025-06-03T22:41:19.232371718+01:00",
 								"Value": 3014
 							}
 						],
@@ -42,8 +42,8 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-05-26T14:16:41.131720495+01:00",
-								"Time": "2025-05-26T14:16:44.146097898+01:00",
+								"StartTime": "2025-06-03T22:41:16.217701278+01:00",
+								"Time": "2025-06-03T22:41:19.232381218+01:00",
 								"Value": 20
 							}
 						],
@@ -59,8 +59,8 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-05-26T14:16:41.13172694+01:00",
-								"Time": "2025-05-26T14:16:44.146100279+01:00",
+								"StartTime": "2025-06-03T22:41:16.217715602+01:00",
+								"Time": "2025-06-03T22:41:19.232383645+01:00",
 								"Value": 1
 							}
 						],
@@ -76,9 +76,9 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-05-26T14:16:41.131740858+01:00",
-								"Time": "2025-05-26T14:16:44.146102241+01:00",
-								"Value": 1908736
+								"StartTime": "2025-06-03T22:41:16.217748714+01:00",
+								"Time": "2025-06-03T22:41:19.232386278+01:00",
+								"Value": 1739072
 							}
 						],
 						"Temporality": "CumulativeTemporality",
@@ -93,9 +93,9 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-05-26T14:16:41.131747222+01:00",
-								"Time": "2025-05-26T14:16:44.146104053+01:00",
-								"Value": 7708672
+								"StartTime": "2025-06-03T22:41:16.217761145+01:00",
+								"Time": "2025-06-03T22:41:19.232388313+01:00",
+								"Value": 3964928
 							}
 						],
 						"Temporality": "CumulativeTemporality",
@@ -110,9 +110,9 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-05-26T14:16:41.131752513+01:00",
-								"Time": "2025-05-26T14:16:44.146105762+01:00",
-								"Value": 3923968
+								"StartTime": "2025-06-03T22:41:16.217771808+01:00",
+								"Time": "2025-06-03T22:41:19.232389947+01:00",
+								"Value": 3670016
 							}
 						],
 						"Temporality": "CumulativeTemporality",
@@ -127,9 +127,9 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-05-26T14:16:41.131757702+01:00",
-								"Time": "2025-05-26T14:16:44.146108363+01:00",
-								"Value": 7967
+								"StartTime": "2025-06-03T22:41:16.217780855+01:00",
+								"Time": "2025-06-03T22:41:19.232393475+01:00",
+								"Value": 6926
 							}
 						],
 						"Temporality": "CumulativeTemporality",
@@ -144,9 +144,9 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-05-26T14:16:41.13176253+01:00",
-								"Time": "2025-05-26T14:16:44.146110144+01:00",
-								"Value": 6520832
+								"StartTime": "2025-06-03T22:41:16.217790172+01:00",
+								"Time": "2025-06-03T22:41:19.232395783+01:00",
+								"Value": 2564096
 							}
 						],
 						"Temporality": "CumulativeTemporality",
@@ -161,9 +161,9 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-05-26T14:16:41.131769947+01:00",
-								"Time": "2025-05-26T14:16:44.146112435+01:00",
-								"Value": 11632640
+								"StartTime": "2025-06-03T22:41:16.217805615+01:00",
+								"Time": "2025-06-03T22:41:19.232397762+01:00",
+								"Value": 7634944
 							}
 						],
 						"Temporality": "CumulativeTemporality",
@@ -178,8 +178,8 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-05-26T14:16:41.131783895+01:00",
-								"Time": "2025-05-26T14:16:44.146114352+01:00",
+								"StartTime": "2025-06-03T22:41:16.217837794+01:00",
+								"Time": "2025-06-03T22:41:19.232399681+01:00",
 								"Value": 0
 							}
 						],
@@ -195,9 +195,9 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-05-26T14:16:41.131789713+01:00",
-								"Time": "2025-05-26T14:16:44.146116638+01:00",
-								"Value": 7967
+								"StartTime": "2025-06-03T22:41:16.217847232+01:00",
+								"Time": "2025-06-03T22:41:19.232402684+01:00",
+								"Value": 6926
 							}
 						],
 						"Temporality": "CumulativeTemporality",
@@ -212,9 +212,9 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-05-26T14:16:41.131794322+01:00",
-								"Time": "2025-05-26T14:16:44.146118685+01:00",
-								"Value": 422
+								"StartTime": "2025-06-03T22:41:16.21785644+01:00",
+								"Time": "2025-06-03T22:41:19.232408946+01:00",
+								"Value": 433
 							}
 						],
 						"Temporality": "CumulativeTemporality",
@@ -229,9 +229,9 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-05-26T14:16:41.131798945+01:00",
-								"Time": "2025-05-26T14:16:44.146121387+01:00",
-								"Value": 19782437
+								"StartTime": "2025-06-03T22:41:16.217866513+01:00",
+								"Time": "2025-06-03T22:41:19.232411345+01:00",
+								"Value": 17871702
 							}
 						],
 						"Temporality": "CumulativeTemporality",
@@ -246,8 +246,8 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-05-26T14:16:41.131808768+01:00",
-								"Time": "2025-05-26T14:16:44.14612437+01:00",
+								"StartTime": "2025-06-03T22:41:16.217886734+01:00",
+								"Time": "2025-06-03T22:41:19.232414031+01:00",
 								"Count": 256,
 								"Bounds": [
 									0,
@@ -284,9 +284,73 @@
 									0,
 									256
 								],
-								"Min": 18447,
-								"Max": 188748,
-								"Sum": 11471025
+								"Min": 14144,
+								"Max": 295894,
+								"Sum": 10643879
+							}
+						],
+						"Temporality": "CumulativeTemporality"
+					}
+				}
+			]
+		},
+		{
+			"Scope": {
+				"Name": "proglog",
+				"Version": "",
+				"SchemaURL": "",
+				"Attributes": null
+			},
+			"Metrics": [
+				{
+					"Name": "server.request.latency",
+					"Description": "The latency of incoming requests",
+					"Unit": "ms",
+					"Data": {
+						"DataPoints": [
+							{
+								"Attributes": [],
+								"StartTime": "2025-06-03T22:41:16.217957619+01:00",
+								"Time": "2025-06-03T22:41:19.232420405+01:00",
+								"Count": 1,
+								"Bounds": [
+									0,
+									5,
+									10,
+									25,
+									50,
+									75,
+									100,
+									250,
+									500,
+									750,
+									1000,
+									2500,
+									5000,
+									7500,
+									10000
+								],
+								"BucketCounts": [
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									1
+								],
+								"Min": 109017,
+								"Max": 109017,
+								"Sum": 109017
 							}
 						],
 						"Temporality": "CumulativeTemporality"
@@ -314,89 +378,7 @@
 										"Key": "rpc.grpc.status_code",
 										"Value": {
 											"Type": "INT64",
-											"Value": 7
-										}
-									},
-									{
-										"Key": "rpc.method",
-										"Value": {
-											"Type": "STRING",
-											"Value": "Produce"
-										}
-									},
-									{
-										"Key": "rpc.service",
-										"Value": {
-											"Type": "STRING",
-											"Value": "log.v1.Log"
-										}
-									},
-									{
-										"Key": "rpc.system",
-										"Value": {
-											"Type": "STRING",
-											"Value": "grpc"
-										}
-									}
-								],
-								"StartTime": "2025-05-26T14:16:41.133667915+01:00",
-								"Time": "2025-05-26T14:16:44.146133499+01:00",
-								"Count": 1,
-								"Bounds": [
-									0,
-									5,
-									10,
-									25,
-									50,
-									75,
-									100,
-									250,
-									500,
-									750,
-									1000,
-									2500,
-									5000,
-									7500,
-									10000
-								],
-								"BucketCounts": [
-									0,
-									1,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0
-								],
-								"Min": 0.076331,
-								"Max": 0.076331,
-								"Sum": 0.076331,
-								"Exemplars": [
-									{
-										"FilteredAttributes": null,
-										"Time": "2025-05-26T14:16:41.140573429+01:00",
-										"Value": 0.076331,
-										"SpanID": "Cx70Ov1Z48E=",
-										"TraceID": "d/910LQ6Jtf90y0qsZCV0A=="
-									}
-								]
-							},
-							{
-								"Attributes": [
-									{
-										"Key": "rpc.grpc.status_code",
-										"Value": {
-											"Type": "INT64",
-											"Value": 7
+											"Value": 404
 										}
 									},
 									{
@@ -421,8 +403,8 @@
 										}
 									}
 								],
-								"StartTime": "2025-05-26T14:16:41.133667915+01:00",
-								"Time": "2025-05-26T14:16:44.146133499+01:00",
+								"StartTime": "2025-06-03T22:41:16.22152442+01:00",
+								"Time": "2025-06-03T22:41:19.232426955+01:00",
 								"Count": 1,
 								"Bounds": [
 									0,
@@ -459,16 +441,98 @@
 									0,
 									0
 								],
-								"Min": 0.058007,
-								"Max": 0.058007,
-								"Sum": 0.058007,
+								"Min": 0.247364,
+								"Max": 0.247364,
+								"Sum": 0.247364,
 								"Exemplars": [
 									{
 										"FilteredAttributes": null,
-										"Time": "2025-05-26T14:16:41.140975693+01:00",
-										"Value": 0.058007,
-										"SpanID": "j07ikI7uQJA=",
-										"TraceID": "R7p1iOpjGen+idiM76YLyA=="
+										"Time": "2025-06-03T22:41:16.229751469+01:00",
+										"Value": 0.247364,
+										"SpanID": "6qz4RgeOBHs=",
+										"TraceID": "hcgZVXGiZ/VRg+O+HANwJg=="
+									}
+								]
+							},
+							{
+								"Attributes": [
+									{
+										"Key": "rpc.grpc.status_code",
+										"Value": {
+											"Type": "INT64",
+											"Value": 0
+										}
+									},
+									{
+										"Key": "rpc.method",
+										"Value": {
+											"Type": "STRING",
+											"Value": "Produce"
+										}
+									},
+									{
+										"Key": "rpc.service",
+										"Value": {
+											"Type": "STRING",
+											"Value": "log.v1.Log"
+										}
+									},
+									{
+										"Key": "rpc.system",
+										"Value": {
+											"Type": "STRING",
+											"Value": "grpc"
+										}
+									}
+								],
+								"StartTime": "2025-06-03T22:41:16.22152442+01:00",
+								"Time": "2025-06-03T22:41:19.232426955+01:00",
+								"Count": 1,
+								"Bounds": [
+									0,
+									5,
+									10,
+									25,
+									50,
+									75,
+									100,
+									250,
+									500,
+									750,
+									1000,
+									2500,
+									5000,
+									7500,
+									10000
+								],
+								"BucketCounts": [
+									0,
+									1,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0
+								],
+								"Min": 0.184237,
+								"Max": 0.184237,
+								"Sum": 0.184237,
+								"Exemplars": [
+									{
+										"FilteredAttributes": null,
+										"Time": "2025-06-03T22:41:16.229108466+01:00",
+										"Value": 0.184237,
+										"SpanID": "WljT0Pzt6Mw=",
+										"TraceID": "YCb1lILbJc43AjflC3QiHA=="
 									}
 								]
 							}
@@ -506,8 +570,8 @@
 										}
 									}
 								],
-								"StartTime": "2025-05-26T14:16:41.133679916+01:00",
-								"Time": "2025-05-26T14:16:44.14614477+01:00",
+								"StartTime": "2025-06-03T22:41:16.221542859+01:00",
+								"Time": "2025-06-03T22:41:19.232435047+01:00",
 								"Count": 1,
 								"Bounds": [
 									0,
@@ -550,10 +614,10 @@
 								"Exemplars": [
 									{
 										"FilteredAttributes": null,
-										"Time": "2025-05-26T14:16:41.140509747+01:00",
+										"Time": "2025-06-03T22:41:16.228950923+01:00",
 										"Value": 15,
-										"SpanID": "Cx70Ov1Z48E=",
-										"TraceID": "d/910LQ6Jtf90y0qsZCV0A=="
+										"SpanID": "WljT0Pzt6Mw=",
+										"TraceID": "YCb1lILbJc43AjflC3QiHA=="
 									}
 								]
 							},
@@ -581,8 +645,93 @@
 										}
 									}
 								],
-								"StartTime": "2025-05-26T14:16:41.133679916+01:00",
-								"Time": "2025-05-26T14:16:44.14614477+01:00",
+								"StartTime": "2025-06-03T22:41:16.221542859+01:00",
+								"Time": "2025-06-03T22:41:19.232435047+01:00",
+								"Count": 1,
+								"Bounds": [
+									0,
+									5,
+									10,
+									25,
+									50,
+									75,
+									100,
+									250,
+									500,
+									750,
+									1000,
+									2500,
+									5000,
+									7500,
+									10000
+								],
+								"BucketCounts": [
+									0,
+									1,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0
+								],
+								"Min": 2,
+								"Max": 2,
+								"Sum": 2,
+								"Exemplars": [
+									{
+										"FilteredAttributes": null,
+										"Time": "2025-06-03T22:41:16.229510129+01:00",
+										"Value": 2,
+										"SpanID": "6qz4RgeOBHs=",
+										"TraceID": "hcgZVXGiZ/VRg+O+HANwJg=="
+									}
+								]
+							}
+						],
+						"Temporality": "CumulativeTemporality"
+					}
+				},
+				{
+					"Name": "rpc.server.response.size",
+					"Description": "Measures the size of RPC response messages (uncompressed).",
+					"Unit": "By",
+					"Data": {
+						"DataPoints": [
+							{
+								"Attributes": [
+									{
+										"Key": "rpc.method",
+										"Value": {
+											"Type": "STRING",
+											"Value": "Produce"
+										}
+									},
+									{
+										"Key": "rpc.service",
+										"Value": {
+											"Type": "STRING",
+											"Value": "log.v1.Log"
+										}
+									},
+									{
+										"Key": "rpc.system",
+										"Value": {
+											"Type": "STRING",
+											"Value": "grpc"
+										}
+									}
+								],
+								"StartTime": "2025-06-03T22:41:16.221555219+01:00",
+								"Time": "2025-06-03T22:41:19.232442885+01:00",
 								"Count": 1,
 								"Bounds": [
 									0,
@@ -625,10 +774,10 @@
 								"Exemplars": [
 									{
 										"FilteredAttributes": null,
-										"Time": "2025-05-26T14:16:41.140927202+01:00",
+										"Time": "2025-06-03T22:41:16.229089687+01:00",
 										"Value": 0,
-										"SpanID": "j07ikI7uQJA=",
-										"TraceID": "R7p1iOpjGen+idiM76YLyA=="
+										"SpanID": "WljT0Pzt6Mw=",
+										"TraceID": "YCb1lILbJc43AjflC3QiHA=="
 									}
 								]
 							}
@@ -648,89 +797,7 @@
 										"Key": "rpc.grpc.status_code",
 										"Value": {
 											"Type": "INT64",
-											"Value": 7
-										}
-									},
-									{
-										"Key": "rpc.method",
-										"Value": {
-											"Type": "STRING",
-											"Value": "Consume"
-										}
-									},
-									{
-										"Key": "rpc.service",
-										"Value": {
-											"Type": "STRING",
-											"Value": "log.v1.Log"
-										}
-									},
-									{
-										"Key": "rpc.system",
-										"Value": {
-											"Type": "STRING",
-											"Value": "grpc"
-										}
-									}
-								],
-								"StartTime": "2025-05-26T14:16:41.133694099+01:00",
-								"Time": "2025-05-26T14:16:44.146151615+01:00",
-								"Count": 1,
-								"Bounds": [
-									0,
-									5,
-									10,
-									25,
-									50,
-									75,
-									100,
-									250,
-									500,
-									750,
-									1000,
-									2500,
-									5000,
-									7500,
-									10000
-								],
-								"BucketCounts": [
-									0,
-									1,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0
-								],
-								"Min": 1,
-								"Max": 1,
-								"Sum": 1,
-								"Exemplars": [
-									{
-										"FilteredAttributes": null,
-										"Time": "2025-05-26T14:16:41.140978073+01:00",
-										"Value": 1,
-										"SpanID": "j07ikI7uQJA=",
-										"TraceID": "R7p1iOpjGen+idiM76YLyA=="
-									}
-								]
-							},
-							{
-								"Attributes": [
-									{
-										"Key": "rpc.grpc.status_code",
-										"Value": {
-											"Type": "INT64",
-											"Value": 7
+											"Value": 0
 										}
 									},
 									{
@@ -755,8 +822,8 @@
 										}
 									}
 								],
-								"StartTime": "2025-05-26T14:16:41.133694099+01:00",
-								"Time": "2025-05-26T14:16:44.146151615+01:00",
+								"StartTime": "2025-06-03T22:41:16.221562493+01:00",
+								"Time": "2025-06-03T22:41:19.232445259+01:00",
 								"Count": 1,
 								"Bounds": [
 									0,
@@ -799,10 +866,92 @@
 								"Exemplars": [
 									{
 										"FilteredAttributes": null,
-										"Time": "2025-05-26T14:16:41.140575601+01:00",
+										"Time": "2025-06-03T22:41:16.229111519+01:00",
 										"Value": 1,
-										"SpanID": "Cx70Ov1Z48E=",
-										"TraceID": "d/910LQ6Jtf90y0qsZCV0A=="
+										"SpanID": "WljT0Pzt6Mw=",
+										"TraceID": "YCb1lILbJc43AjflC3QiHA=="
+									}
+								]
+							},
+							{
+								"Attributes": [
+									{
+										"Key": "rpc.grpc.status_code",
+										"Value": {
+											"Type": "INT64",
+											"Value": 404
+										}
+									},
+									{
+										"Key": "rpc.method",
+										"Value": {
+											"Type": "STRING",
+											"Value": "Consume"
+										}
+									},
+									{
+										"Key": "rpc.service",
+										"Value": {
+											"Type": "STRING",
+											"Value": "log.v1.Log"
+										}
+									},
+									{
+										"Key": "rpc.system",
+										"Value": {
+											"Type": "STRING",
+											"Value": "grpc"
+										}
+									}
+								],
+								"StartTime": "2025-06-03T22:41:16.221562493+01:00",
+								"Time": "2025-06-03T22:41:19.232445259+01:00",
+								"Count": 1,
+								"Bounds": [
+									0,
+									5,
+									10,
+									25,
+									50,
+									75,
+									100,
+									250,
+									500,
+									750,
+									1000,
+									2500,
+									5000,
+									7500,
+									10000
+								],
+								"BucketCounts": [
+									0,
+									1,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0
+								],
+								"Min": 1,
+								"Max": 1,
+								"Sum": 1,
+								"Exemplars": [
+									{
+										"FilteredAttributes": null,
+										"Time": "2025-06-03T22:41:16.229755255+01:00",
+										"Value": 1,
+										"SpanID": "6qz4RgeOBHs=",
+										"TraceID": "hcgZVXGiZ/VRg+O+HANwJg=="
 									}
 								]
 							}
@@ -822,7 +971,7 @@
 										"Key": "rpc.grpc.status_code",
 										"Value": {
 											"Type": "INT64",
-											"Value": 7
+											"Value": 0
 										}
 									},
 									{
@@ -847,8 +996,8 @@
 										}
 									}
 								],
-								"StartTime": "2025-05-26T14:16:41.13369872+01:00",
-								"Time": "2025-05-26T14:16:44.146155616+01:00",
+								"StartTime": "2025-06-03T22:41:16.22156889+01:00",
+								"Time": "2025-06-03T22:41:19.232449415+01:00",
 								"Count": 1,
 								"Bounds": [
 									0,
@@ -868,8 +1017,8 @@
 									10000
 								],
 								"BucketCounts": [
-									1,
 									0,
+									1,
 									0,
 									0,
 									0,
@@ -885,16 +1034,16 @@
 									0,
 									0
 								],
-								"Min": 0,
-								"Max": 0,
-								"Sum": 0,
+								"Min": 1,
+								"Max": 1,
+								"Sum": 1,
 								"Exemplars": [
 									{
 										"FilteredAttributes": null,
-										"Time": "2025-05-26T14:16:41.140577235+01:00",
-										"Value": 0,
-										"SpanID": "Cx70Ov1Z48E=",
-										"TraceID": "d/910LQ6Jtf90y0qsZCV0A=="
+										"Time": "2025-06-03T22:41:16.229113923+01:00",
+										"Value": 1,
+										"SpanID": "WljT0Pzt6Mw=",
+										"TraceID": "YCb1lILbJc43AjflC3QiHA=="
 									}
 								]
 							},
@@ -904,7 +1053,7 @@
 										"Key": "rpc.grpc.status_code",
 										"Value": {
 											"Type": "INT64",
-											"Value": 7
+											"Value": 404
 										}
 									},
 									{
@@ -929,8 +1078,8 @@
 										}
 									}
 								],
-								"StartTime": "2025-05-26T14:16:41.13369872+01:00",
-								"Time": "2025-05-26T14:16:44.146155616+01:00",
+								"StartTime": "2025-06-03T22:41:16.22156889+01:00",
+								"Time": "2025-06-03T22:41:19.232449415+01:00",
 								"Count": 1,
 								"Bounds": [
 									0,
@@ -973,10 +1122,10 @@
 								"Exemplars": [
 									{
 										"FilteredAttributes": null,
-										"Time": "2025-05-26T14:16:41.14097969+01:00",
+										"Time": "2025-06-03T22:41:16.229757689+01:00",
 										"Value": 0,
-										"SpanID": "j07ikI7uQJA=",
-										"TraceID": "R7p1iOpjGen+idiM76YLyA=="
+										"SpanID": "6qz4RgeOBHs=",
+										"TraceID": "hcgZVXGiZ/VRg+O+HANwJg=="
 									}
 								]
 							}

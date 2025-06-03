@@ -53,6 +53,8 @@ func (r *Replicator) replicate(addr string, leave chan struct{}) {
 
 	if err != nil {
 		r.LogError(err, "failed to consume", addr)
+		// forgot this initially
+		return
 	}
 	records := make(chan *api.Record)
 
@@ -62,6 +64,7 @@ func (r *Replicator) replicate(addr string, leave chan struct{}) {
 
 			if err != nil {
 				r.LogError(err, "failed to receive", addr)
+				return
 			}
 
 			records <- recv.Record
@@ -79,8 +82,8 @@ func (r *Replicator) replicate(addr string, leave chan struct{}) {
 			_, err = r.LocalServer.Produce(ctx, &api.ProduceRequest{Record: record})
 			if err != nil {
 				r.LogError(err, "failed to produce", addr)
+				return
 			}
-			return
 		}
 	}
 }
