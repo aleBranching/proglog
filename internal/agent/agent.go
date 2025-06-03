@@ -150,7 +150,7 @@ func (a *Agent) setupMembership() error {
 		NodeName: a.Config.NodeName,
 		BindAddr: a.Config.BindAddr,
 		Tags: map[string]string{
-			"rcp_addr": rcpAddr,
+			"rpc_addr": rcpAddr,
 		},
 		StartJoinAddrs: a.Config.StartJoindAddrs,
 	})

@@ -85,7 +85,7 @@ func (m *Membership) eventHandler() {
 func (m *Membership) handleJoin(member serf.Member) {
 	if err := m.handler.Join(
 		member.Name,
-		member.Tags["rcp_addr"],
+		member.Tags["rpc_addr"],
 	); err != nil {
 		fmt.Print("failed to join")
 	}
@@ -117,5 +117,5 @@ func (m *Membership) Leave() error {
 }
 
 func (m *Membership) logError(err error, msg string, member serf.Member) {
-	log.Println(err.Error(), "name : \n", member.Name, "rcp_addr", member.Tags["rcp_addr"])
+	log.Println(err.Error(), "name : \n", member.Name, "rpc_addr", member.Tags["rpc_addr"])
 }
