@@ -15,7 +15,7 @@ func eventually(t *testing.T, condFunc func() bool) {
 
 	res := false
 	for i := 0; i < 10; i++ {
-		time.Sleep(250 * time.Millisecond)
+		time.Sleep(100 * time.Millisecond)
 		// how many joined
 		res = condFunc()
 
