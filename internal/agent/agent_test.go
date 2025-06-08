@@ -15,6 +15,7 @@ import (
 	"github.com/travisjeffery/go-dynaport"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
+	"google.golang.org/grpc/status"
 )
 
 func TestAgent(t *testing.T) {
@@ -68,6 +69,7 @@ func TestAgent(t *testing.T) {
 			ACLPolicyFile:   config.ACLPolicyFile,
 			ServerTLSConfig: ServerTLSConfig,
 			PeerTLSConfig:   peerTLSConfig,
+			Bootstrap:       i == 0,
 		})
 		if err != nil {
 			t.Fatal("aaa")
@@ -116,24 +118,26 @@ func TestAgent(t *testing.T) {
 		&api.ConsumeRequest{Offset: produceResponse.Offset},
 	)
 	if err != nil {
-		t.Fatal("cccc")
+		t.Fatal("cccc", err)
 	}
 	if !bytes.Equal(consumeResponse.Record.Value, []byte("oh no")) {
 		t.Fatal("oh no it no match`")
 	}
 
 	time.Sleep(3 * time.Second)
-
-	consumeResponse, err = leaderClient.Consume(
-		context.Background(),
-		// Replicates data from one server that replicated the original record and so on and on
-		&api.ConsumeRequest{Offset: produceResponse.Offset + 4},
-	)
-	if err != nil {
+	consumeResponse, err = leaderClient.Consume(context.Background(), &api.ConsumeRequest{
+		Offset: produceResponse.Offset + 1,
+	})
+	if consumeResponse != nil {
+		t.Fatal("oaaaa")
+	}
+	if err == nil {
 		t.Fatal("cccc")
 	}
-	if !bytes.Equal(consumeResponse.Record.Value, []byte("oh no")) {
-		t.Fatal("oh no it no match`")
+	got := status.Code(err)
+	want := status.Code(api.ErrOffsetOutOfRange{}.GRPCStatus().Err())
+	if got.String() != want.String() {
+		t.Fatal("it don't")
 	}
 }
 
