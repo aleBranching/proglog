@@ -5,6 +5,7 @@ import (
 	"log"
 	"net"
 
+	"github.com/hashicorp/raft"
 	"github.com/hashicorp/serf/serf"
 )
 
@@ -117,5 +118,8 @@ func (m *Membership) Leave() error {
 }
 
 func (m *Membership) logError(err error, msg string, member serf.Member) {
+	if err == raft.ErrNotLeader {
+		return
+	}
 	log.Println(err.Error(), "name : \n", member.Name, "rpc_addr", member.Tags["rpc_addr"])
 }
