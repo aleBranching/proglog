@@ -121,6 +121,20 @@ func TestAgent(t *testing.T) {
 	if !bytes.Equal(consumeResponse.Record.Value, []byte("oh no")) {
 		t.Fatal("oh no it no match`")
 	}
+
+	time.Sleep(3 * time.Second)
+
+	consumeResponse, err = leaderClient.Consume(
+		context.Background(),
+		// Replicates data from one server that replicated the original record and so on and on
+		&api.ConsumeRequest{Offset: produceResponse.Offset + 4},
+	)
+	if err != nil {
+		t.Fatal("cccc")
+	}
+	if !bytes.Equal(consumeResponse.Record.Value, []byte("oh no")) {
+		t.Fatal("oh no it no match`")
+	}
 }
 
 func client(t *testing.T, agent *agent.Agent, tlsConfig *tls.Config) api.LogClient {
