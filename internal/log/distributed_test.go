@@ -112,12 +112,44 @@ func TestMultipleNodes(t *testing.T) {
 		})
 
 	}
+	// testing grpc server's get servers response
+	servers, err := logs[0].GetServers()
+	if err != nil {
+		t.Fatal("oh no")
+	}
+	if len(servers) != 3 {
+		t.Fatal("oh no")
+	}
+	if servers[0].IsLeader != true {
+		t.Fatal("oh no")
+	}
+	if servers[1].IsLeader != false {
+		t.Fatal("oh no")
+	}
+	if servers[2].IsLeader != false {
+		t.Fatal("oh no")
+	}
 
-	err := logs[0].Leave("1")
+	err = logs[0].Leave("1")
 	if err != nil {
 		t.Fatal("oh no")
 	}
 	time.Sleep(50 * time.Millisecond)
+
+	servers, err = logs[0].GetServers()
+	if err != nil {
+		t.Fatal("oh no")
+	}
+	if len(servers) != 2 {
+		t.Fatal("oh no")
+	}
+	if servers[0].IsLeader != true {
+		t.Fatal("oh no")
+	}
+	if servers[1].IsLeader != false {
+		t.Fatal("oh no")
+	}
+
 	off, err := logs[0].Append(&api.Record{
 		Value: []byte("third"),
 	})

@@ -12,6 +12,7 @@ import (
 	api "github.com/aleBranching/proglog/api/v1"
 	"github.com/aleBranching/proglog/internal/agent"
 	"github.com/aleBranching/proglog/internal/config"
+	"github.com/aleBranching/proglog/internal/loadbalance"
 	"github.com/travisjeffery/go-dynaport"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
@@ -100,6 +101,7 @@ func TestAgent(t *testing.T) {
 	if err != nil {
 		t.Fatal("cccc")
 	}
+	time.Sleep(3 * time.Second)
 	consumeResponse, err := leaderClient.Consume(
 		context.Background(),
 		&api.ConsumeRequest{Offset: produceResponse.Offset},
@@ -148,7 +150,8 @@ func client(t *testing.T, agent *agent.Agent, tlsConfig *tls.Config) api.LogClie
 	if err != nil {
 		t.Fatal("aaaa")
 	}
-	cc, err := grpc.Dial(fmt.Sprintf("%s", rpcAddr), opts...)
+	cc, err := grpc.Dial(fmt.Sprintf("%s:///%s", loadbalance.Name, rpcAddr), opts...)
+	// cc, err := grpc.Dial(fmt.Sprintf("%s", rpcAddr), opts...)
 	if err != nil {
 		t.Fatal("aaaa")
 	}

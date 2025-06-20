@@ -11,23 +11,244 @@
 	"ScopeMetrics": [
 		{
 			"Scope": {
-				"Name": "proglog",
-				"Version": "",
+				"Name": "go.opentelemetry.io/contrib/instrumentation/runtime",
+				"Version": "0.61.0",
 				"SchemaURL": "",
 				"Attributes": null
 			},
 			"Metrics": [
 				{
-					"Name": "server.request.latency",
-					"Description": "The latency of incoming requests",
+					"Name": "runtime.uptime",
+					"Description": "Milliseconds since application was initialized",
 					"Unit": "ms",
 					"Data": {
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-06-03T23:10:28.138478676+01:00",
-								"Time": "2025-06-03T23:10:31.162164083+01:00",
-								"Count": 2,
+								"StartTime": "2025-06-12T18:38:08.105209844+01:00",
+								"Time": "2025-06-12T18:38:11.129287146+01:00",
+								"Value": 3023
+							}
+						],
+						"Temporality": "CumulativeTemporality",
+						"IsMonotonic": true
+					}
+				},
+				{
+					"Name": "process.runtime.go.goroutines",
+					"Description": "Number of goroutines that currently exist",
+					"Unit": "",
+					"Data": {
+						"DataPoints": [
+							{
+								"Attributes": [],
+								"StartTime": "2025-06-12T18:38:08.105246178+01:00",
+								"Time": "2025-06-12T18:38:11.129313266+01:00",
+								"Value": 20
+							}
+						],
+						"Temporality": "CumulativeTemporality",
+						"IsMonotonic": false
+					}
+				},
+				{
+					"Name": "process.runtime.go.cgo.calls",
+					"Description": "Number of cgo calls made by the current process",
+					"Unit": "",
+					"Data": {
+						"DataPoints": [
+							{
+								"Attributes": [],
+								"StartTime": "2025-06-12T18:38:08.105271844+01:00",
+								"Time": "2025-06-12T18:38:11.129323424+01:00",
+								"Value": 1
+							}
+						],
+						"Temporality": "CumulativeTemporality",
+						"IsMonotonic": false
+					}
+				},
+				{
+					"Name": "process.runtime.go.mem.heap_alloc",
+					"Description": "Bytes of allocated heap objects",
+					"Unit": "By",
+					"Data": {
+						"DataPoints": [
+							{
+								"Attributes": [],
+								"StartTime": "2025-06-12T18:38:08.105305646+01:00",
+								"Time": "2025-06-12T18:38:11.129332011+01:00",
+								"Value": 1743552
+							}
+						],
+						"Temporality": "CumulativeTemporality",
+						"IsMonotonic": false
+					}
+				},
+				{
+					"Name": "process.runtime.go.mem.heap_idle",
+					"Description": "Bytes in idle (unused) spans",
+					"Unit": "By",
+					"Data": {
+						"DataPoints": [
+							{
+								"Attributes": [],
+								"StartTime": "2025-06-12T18:38:08.105332237+01:00",
+								"Time": "2025-06-12T18:38:11.129340988+01:00",
+								"Value": 3579904
+							}
+						],
+						"Temporality": "CumulativeTemporality",
+						"IsMonotonic": false
+					}
+				},
+				{
+					"Name": "process.runtime.go.mem.heap_inuse",
+					"Description": "Bytes in in-use spans",
+					"Unit": "By",
+					"Data": {
+						"DataPoints": [
+							{
+								"Attributes": [],
+								"StartTime": "2025-06-12T18:38:08.105351509+01:00",
+								"Time": "2025-06-12T18:38:11.129349194+01:00",
+								"Value": 3792896
+							}
+						],
+						"Temporality": "CumulativeTemporality",
+						"IsMonotonic": false
+					}
+				},
+				{
+					"Name": "process.runtime.go.mem.heap_objects",
+					"Description": "Number of allocated heap objects",
+					"Unit": "",
+					"Data": {
+						"DataPoints": [
+							{
+								"Attributes": [],
+								"StartTime": "2025-06-12T18:38:08.105368288+01:00",
+								"Time": "2025-06-12T18:38:11.129356788+01:00",
+								"Value": 7224
+							}
+						],
+						"Temporality": "CumulativeTemporality",
+						"IsMonotonic": false
+					}
+				},
+				{
+					"Name": "process.runtime.go.mem.heap_released",
+					"Description": "Bytes of idle spans whose physical memory has been returned to the OS",
+					"Unit": "By",
+					"Data": {
+						"DataPoints": [
+							{
+								"Attributes": [],
+								"StartTime": "2025-06-12T18:38:08.10538438+01:00",
+								"Time": "2025-06-12T18:38:11.129364411+01:00",
+								"Value": 2342912
+							}
+						],
+						"Temporality": "CumulativeTemporality",
+						"IsMonotonic": false
+					}
+				},
+				{
+					"Name": "process.runtime.go.mem.heap_sys",
+					"Description": "Bytes of heap memory obtained from the OS",
+					"Unit": "By",
+					"Data": {
+						"DataPoints": [
+							{
+								"Attributes": [],
+								"StartTime": "2025-06-12T18:38:08.105402031+01:00",
+								"Time": "2025-06-12T18:38:11.129381328+01:00",
+								"Value": 7372800
+							}
+						],
+						"Temporality": "CumulativeTemporality",
+						"IsMonotonic": false
+					}
+				},
+				{
+					"Name": "process.runtime.go.mem.lookups",
+					"Description": "Number of pointer lookups performed by the runtime",
+					"Unit": "",
+					"Data": {
+						"DataPoints": [
+							{
+								"Attributes": [],
+								"StartTime": "2025-06-12T18:38:08.105429454+01:00",
+								"Time": "2025-06-12T18:38:11.12938834+01:00",
+								"Value": 0
+							}
+						],
+						"Temporality": "CumulativeTemporality",
+						"IsMonotonic": true
+					}
+				},
+				{
+					"Name": "process.runtime.go.mem.live_objects",
+					"Description": "Number of live objects is the number of cumulative Mallocs - Frees",
+					"Unit": "",
+					"Data": {
+						"DataPoints": [
+							{
+								"Attributes": [],
+								"StartTime": "2025-06-12T18:38:08.105446504+01:00",
+								"Time": "2025-06-12T18:38:11.129397604+01:00",
+								"Value": 7224
+							}
+						],
+						"Temporality": "CumulativeTemporality",
+						"IsMonotonic": false
+					}
+				},
+				{
+					"Name": "process.runtime.go.gc.count",
+					"Description": "Number of completed garbage collection cycles",
+					"Unit": "",
+					"Data": {
+						"DataPoints": [
+							{
+								"Attributes": [],
+								"StartTime": "2025-06-12T18:38:08.105462465+01:00",
+								"Time": "2025-06-12T18:38:11.129404956+01:00",
+								"Value": 324
+							}
+						],
+						"Temporality": "CumulativeTemporality",
+						"IsMonotonic": true
+					}
+				},
+				{
+					"Name": "process.runtime.go.gc.pause_total_ns",
+					"Description": "Cumulative nanoseconds in GC stop-the-world pauses since the program started",
+					"Unit": "",
+					"Data": {
+						"DataPoints": [
+							{
+								"Attributes": [],
+								"StartTime": "2025-06-12T18:38:08.105477877+01:00",
+								"Time": "2025-06-12T18:38:11.129412192+01:00",
+								"Value": 13296810
+							}
+						],
+						"Temporality": "CumulativeTemporality",
+						"IsMonotonic": true
+					}
+				},
+				{
+					"Name": "process.runtime.go.gc.pause_ns",
+					"Description": "Amount of nanoseconds in GC stop-the-world pauses",
+					"Unit": "",
+					"Data": {
+						"DataPoints": [
+							{
+								"Attributes": [],
+								"StartTime": "2025-06-12T18:38:08.10550552+01:00",
+								"Time": "2025-06-12T18:38:11.12942372+01:00",
+								"Count": 256,
 								"Bounds": [
 									0,
 									5,
@@ -61,11 +282,11 @@
 									0,
 									0,
 									0,
-									2
+									256
 								],
-								"Min": 47190,
-								"Max": 148087,
-								"Sum": 195277
+								"Min": 17530,
+								"Max": 158862,
+								"Sum": 10136785
 							}
 						],
 						"Temporality": "CumulativeTemporality"
@@ -82,18 +303,25 @@
 			},
 			"Metrics": [
 				{
-					"Name": "rpc.server.request.size",
-					"Description": "Measures the size of RPC request messages (uncompressed).",
-					"Unit": "By",
+					"Name": "rpc.server.duration",
+					"Description": "Measures the duration of inbound RPC.",
+					"Unit": "ms",
 					"Data": {
 						"DataPoints": [
 							{
 								"Attributes": [
 									{
+										"Key": "rpc.grpc.status_code",
+										"Value": {
+											"Type": "INT64",
+											"Value": 7
+										}
+									},
+									{
 										"Key": "rpc.method",
 										"Value": {
 											"Type": "STRING",
-											"Value": "ProduceStream"
+											"Value": "Produce"
 										}
 									},
 									{
@@ -111,9 +339,9 @@
 										}
 									}
 								],
-								"StartTime": "2025-06-03T23:10:28.147740208+01:00",
-								"Time": "2025-06-03T23:10:31.162312799+01:00",
-								"Count": 2,
+								"StartTime": "2025-06-12T18:38:08.112471509+01:00",
+								"Time": "2025-06-12T18:38:11.129452524+01:00",
+								"Count": 1,
 								"Bounds": [
 									0,
 									5,
@@ -133,9 +361,9 @@
 								],
 								"BucketCounts": [
 									0,
+									1,
 									0,
 									0,
-									2,
 									0,
 									0,
 									0,
@@ -149,26 +377,33 @@
 									0,
 									0
 								],
-								"Min": 17,
-								"Max": 20,
-								"Sum": 37,
+								"Min": 0.295443,
+								"Max": 0.295443,
+								"Sum": 0.295443,
 								"Exemplars": [
 									{
 										"FilteredAttributes": null,
-										"Time": "2025-06-03T23:10:28.160046076+01:00",
-										"Value": 20,
-										"SpanID": "9ygySt4AgBY=",
-										"TraceID": "WQSNlcGCcO64wbg2e0Da1Q=="
+										"Time": "2025-06-12T18:38:08.124741498+01:00",
+										"Value": 0.295443,
+										"SpanID": "EFzZqLxaRCk=",
+										"TraceID": "VI9kiNeStYmwpfcqwgvfKg=="
 									}
 								]
 							},
 							{
 								"Attributes": [
 									{
+										"Key": "rpc.grpc.status_code",
+										"Value": {
+											"Type": "INT64",
+											"Value": 7
+										}
+									},
+									{
 										"Key": "rpc.method",
 										"Value": {
 											"Type": "STRING",
-											"Value": "ConsumeStream"
+											"Value": "Consume"
 										}
 									},
 									{
@@ -186,8 +421,93 @@
 										}
 									}
 								],
-								"StartTime": "2025-06-03T23:10:28.147740208+01:00",
-								"Time": "2025-06-03T23:10:31.162312799+01:00",
+								"StartTime": "2025-06-12T18:38:08.112471509+01:00",
+								"Time": "2025-06-12T18:38:11.129452524+01:00",
+								"Count": 1,
+								"Bounds": [
+									0,
+									5,
+									10,
+									25,
+									50,
+									75,
+									100,
+									250,
+									500,
+									750,
+									1000,
+									2500,
+									5000,
+									7500,
+									10000
+								],
+								"BucketCounts": [
+									0,
+									1,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0
+								],
+								"Min": 0.160579,
+								"Max": 0.160579,
+								"Sum": 0.160579,
+								"Exemplars": [
+									{
+										"FilteredAttributes": null,
+										"Time": "2025-06-12T18:38:08.125541961+01:00",
+										"Value": 0.160579,
+										"SpanID": "bYmk24AMEk8=",
+										"TraceID": "bwV1f0B9t6tyAIjXdwRucQ=="
+									}
+								]
+							}
+						],
+						"Temporality": "CumulativeTemporality"
+					}
+				},
+				{
+					"Name": "rpc.server.request.size",
+					"Description": "Measures the size of RPC request messages (uncompressed).",
+					"Unit": "By",
+					"Data": {
+						"DataPoints": [
+							{
+								"Attributes": [
+									{
+										"Key": "rpc.method",
+										"Value": {
+											"Type": "STRING",
+											"Value": "Consume"
+										}
+									},
+									{
+										"Key": "rpc.service",
+										"Value": {
+											"Type": "STRING",
+											"Value": "log.v1.Log"
+										}
+									},
+									{
+										"Key": "rpc.system",
+										"Value": {
+											"Type": "STRING",
+											"Value": "grpc"
+										}
+									}
+								],
+								"StartTime": "2025-06-12T18:38:08.112527651+01:00",
+								"Time": "2025-06-12T18:38:11.129493062+01:00",
 								"Count": 1,
 								"Bounds": [
 									0,
@@ -230,30 +550,20 @@
 								"Exemplars": [
 									{
 										"FilteredAttributes": null,
-										"Time": "2025-06-03T23:10:28.160657394+01:00",
+										"Time": "2025-06-12T18:38:08.12540402+01:00",
 										"Value": 0,
-										"SpanID": "nQtDzug+Xt0=",
-										"TraceID": "FMUVGPdT8LZEy7RsRurXmw=="
+										"SpanID": "bYmk24AMEk8=",
+										"TraceID": "bwV1f0B9t6tyAIjXdwRucQ=="
 									}
 								]
-							}
-						],
-						"Temporality": "CumulativeTemporality"
-					}
-				},
-				{
-					"Name": "rpc.server.response.size",
-					"Description": "Measures the size of RPC response messages (uncompressed).",
-					"Unit": "By",
-					"Data": {
-						"DataPoints": [
+							},
 							{
 								"Attributes": [
 									{
 										"Key": "rpc.method",
 										"Value": {
 											"Type": "STRING",
-											"Value": "ProduceStream"
+											"Value": "Produce"
 										}
 									},
 									{
@@ -271,9 +581,275 @@
 										}
 									}
 								],
-								"StartTime": "2025-06-03T23:10:28.147774812+01:00",
-								"Time": "2025-06-03T23:10:31.162502415+01:00",
-								"Count": 2,
+								"StartTime": "2025-06-12T18:38:08.112527651+01:00",
+								"Time": "2025-06-12T18:38:11.129493062+01:00",
+								"Count": 1,
+								"Bounds": [
+									0,
+									5,
+									10,
+									25,
+									50,
+									75,
+									100,
+									250,
+									500,
+									750,
+									1000,
+									2500,
+									5000,
+									7500,
+									10000
+								],
+								"BucketCounts": [
+									0,
+									0,
+									0,
+									1,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0
+								],
+								"Min": 15,
+								"Max": 15,
+								"Sum": 15,
+								"Exemplars": [
+									{
+										"FilteredAttributes": null,
+										"Time": "2025-06-12T18:38:08.124485403+01:00",
+										"Value": 15,
+										"SpanID": "EFzZqLxaRCk=",
+										"TraceID": "VI9kiNeStYmwpfcqwgvfKg=="
+									}
+								]
+							}
+						],
+						"Temporality": "CumulativeTemporality"
+					}
+				},
+				{
+					"Name": "rpc.server.requests_per_rpc",
+					"Description": "Measures the number of messages received per RPC.",
+					"Unit": "{count}",
+					"Data": {
+						"DataPoints": [
+							{
+								"Attributes": [
+									{
+										"Key": "rpc.grpc.status_code",
+										"Value": {
+											"Type": "INT64",
+											"Value": 7
+										}
+									},
+									{
+										"Key": "rpc.method",
+										"Value": {
+											"Type": "STRING",
+											"Value": "Consume"
+										}
+									},
+									{
+										"Key": "rpc.service",
+										"Value": {
+											"Type": "STRING",
+											"Value": "log.v1.Log"
+										}
+									},
+									{
+										"Key": "rpc.system",
+										"Value": {
+											"Type": "STRING",
+											"Value": "grpc"
+										}
+									}
+								],
+								"StartTime": "2025-06-12T18:38:08.112590358+01:00",
+								"Time": "2025-06-12T18:38:11.129527821+01:00",
+								"Count": 1,
+								"Bounds": [
+									0,
+									5,
+									10,
+									25,
+									50,
+									75,
+									100,
+									250,
+									500,
+									750,
+									1000,
+									2500,
+									5000,
+									7500,
+									10000
+								],
+								"BucketCounts": [
+									0,
+									1,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0
+								],
+								"Min": 1,
+								"Max": 1,
+								"Sum": 1,
+								"Exemplars": [
+									{
+										"FilteredAttributes": null,
+										"Time": "2025-06-12T18:38:08.125549122+01:00",
+										"Value": 1,
+										"SpanID": "bYmk24AMEk8=",
+										"TraceID": "bwV1f0B9t6tyAIjXdwRucQ=="
+									}
+								]
+							},
+							{
+								"Attributes": [
+									{
+										"Key": "rpc.grpc.status_code",
+										"Value": {
+											"Type": "INT64",
+											"Value": 7
+										}
+									},
+									{
+										"Key": "rpc.method",
+										"Value": {
+											"Type": "STRING",
+											"Value": "Produce"
+										}
+									},
+									{
+										"Key": "rpc.service",
+										"Value": {
+											"Type": "STRING",
+											"Value": "log.v1.Log"
+										}
+									},
+									{
+										"Key": "rpc.system",
+										"Value": {
+											"Type": "STRING",
+											"Value": "grpc"
+										}
+									}
+								],
+								"StartTime": "2025-06-12T18:38:08.112590358+01:00",
+								"Time": "2025-06-12T18:38:11.129527821+01:00",
+								"Count": 1,
+								"Bounds": [
+									0,
+									5,
+									10,
+									25,
+									50,
+									75,
+									100,
+									250,
+									500,
+									750,
+									1000,
+									2500,
+									5000,
+									7500,
+									10000
+								],
+								"BucketCounts": [
+									0,
+									1,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0
+								],
+								"Min": 1,
+								"Max": 1,
+								"Sum": 1,
+								"Exemplars": [
+									{
+										"FilteredAttributes": null,
+										"Time": "2025-06-12T18:38:08.124749786+01:00",
+										"Value": 1,
+										"SpanID": "EFzZqLxaRCk=",
+										"TraceID": "VI9kiNeStYmwpfcqwgvfKg=="
+									}
+								]
+							}
+						],
+						"Temporality": "CumulativeTemporality"
+					}
+				},
+				{
+					"Name": "rpc.server.responses_per_rpc",
+					"Description": "Measures the number of messages sent per RPC.",
+					"Unit": "{count}",
+					"Data": {
+						"DataPoints": [
+							{
+								"Attributes": [
+									{
+										"Key": "rpc.grpc.status_code",
+										"Value": {
+											"Type": "INT64",
+											"Value": 7
+										}
+									},
+									{
+										"Key": "rpc.method",
+										"Value": {
+											"Type": "STRING",
+											"Value": "Produce"
+										}
+									},
+									{
+										"Key": "rpc.service",
+										"Value": {
+											"Type": "STRING",
+											"Value": "log.v1.Log"
+										}
+									},
+									{
+										"Key": "rpc.system",
+										"Value": {
+											"Type": "STRING",
+											"Value": "grpc"
+										}
+									}
+								],
+								"StartTime": "2025-06-12T18:38:08.112612006+01:00",
+								"Time": "2025-06-12T18:38:11.12954628+01:00",
+								"Count": 1,
 								"Bounds": [
 									0,
 									5,
@@ -293,7 +869,7 @@
 								],
 								"BucketCounts": [
 									1,
-									1,
+									0,
 									0,
 									0,
 									0,
@@ -310,32 +886,32 @@
 									0
 								],
 								"Min": 0,
-								"Max": 2,
-								"Sum": 2,
+								"Max": 0,
+								"Sum": 0,
 								"Exemplars": [
 									{
 										"FilteredAttributes": null,
-										"Time": "2025-06-03T23:10:28.159774437+01:00",
+										"Time": "2025-06-12T18:38:08.12475558+01:00",
 										"Value": 0,
-										"SpanID": "9ygySt4AgBY=",
-										"TraceID": "WQSNlcGCcO64wbg2e0Da1Q=="
-									},
-									{
-										"FilteredAttributes": null,
-										"Time": "2025-06-03T23:10:28.160116823+01:00",
-										"Value": 2,
-										"SpanID": "9ygySt4AgBY=",
-										"TraceID": "WQSNlcGCcO64wbg2e0Da1Q=="
+										"SpanID": "EFzZqLxaRCk=",
+										"TraceID": "VI9kiNeStYmwpfcqwgvfKg=="
 									}
 								]
 							},
 							{
 								"Attributes": [
 									{
+										"Key": "rpc.grpc.status_code",
+										"Value": {
+											"Type": "INT64",
+											"Value": 7
+										}
+									},
+									{
 										"Key": "rpc.method",
 										"Value": {
 											"Type": "STRING",
-											"Value": "ConsumeStream"
+											"Value": "Consume"
 										}
 									},
 									{
@@ -353,9 +929,9 @@
 										}
 									}
 								],
-								"StartTime": "2025-06-03T23:10:28.147774812+01:00",
-								"Time": "2025-06-03T23:10:31.162502415+01:00",
-								"Count": 2,
+								"StartTime": "2025-06-12T18:38:08.112612006+01:00",
+								"Time": "2025-06-12T18:38:11.12954628+01:00",
+								"Count": 1,
 								"Bounds": [
 									0,
 									5,
@@ -374,10 +950,10 @@
 									10000
 								],
 								"BucketCounts": [
+									1,
 									0,
 									0,
 									0,
-									2,
 									0,
 									0,
 									0,
@@ -391,303 +967,18 @@
 									0,
 									0
 								],
-								"Min": 17,
-								"Max": 20,
-								"Sum": 37,
+								"Min": 0,
+								"Max": 0,
+								"Sum": 0,
 								"Exemplars": [
 									{
 										"FilteredAttributes": null,
-										"Time": "2025-06-03T23:10:28.161019163+01:00",
-										"Value": 20,
-										"SpanID": "nQtDzug+Xt0=",
-										"TraceID": "FMUVGPdT8LZEy7RsRurXmw=="
+										"Time": "2025-06-12T18:38:08.125554123+01:00",
+										"Value": 0,
+										"SpanID": "bYmk24AMEk8=",
+										"TraceID": "bwV1f0B9t6tyAIjXdwRucQ=="
 									}
 								]
-							}
-						],
-						"Temporality": "CumulativeTemporality"
-					}
-				}
-			]
-		},
-		{
-			"Scope": {
-				"Name": "go.opentelemetry.io/contrib/instrumentation/runtime",
-				"Version": "0.61.0",
-				"SchemaURL": "",
-				"Attributes": null
-			},
-			"Metrics": [
-				{
-					"Name": "runtime.uptime",
-					"Description": "Milliseconds since application was initialized",
-					"Unit": "ms",
-					"Data": {
-						"DataPoints": [
-							{
-								"Attributes": [],
-								"StartTime": "2025-06-03T23:10:28.137534638+01:00",
-								"Time": "2025-06-03T23:10:31.162565517+01:00",
-								"Value": 3024
-							}
-						],
-						"Temporality": "CumulativeTemporality",
-						"IsMonotonic": true
-					}
-				},
-				{
-					"Name": "process.runtime.go.goroutines",
-					"Description": "Number of goroutines that currently exist",
-					"Unit": "",
-					"Data": {
-						"DataPoints": [
-							{
-								"Attributes": [],
-								"StartTime": "2025-06-03T23:10:28.1376259+01:00",
-								"Time": "2025-06-03T23:10:31.162582999+01:00",
-								"Value": 24
-							}
-						],
-						"Temporality": "CumulativeTemporality",
-						"IsMonotonic": false
-					}
-				},
-				{
-					"Name": "process.runtime.go.cgo.calls",
-					"Description": "Number of cgo calls made by the current process",
-					"Unit": "",
-					"Data": {
-						"DataPoints": [
-							{
-								"Attributes": [],
-								"StartTime": "2025-06-03T23:10:28.137750032+01:00",
-								"Time": "2025-06-03T23:10:31.162602847+01:00",
-								"Value": 1
-							}
-						],
-						"Temporality": "CumulativeTemporality",
-						"IsMonotonic": false
-					}
-				},
-				{
-					"Name": "process.runtime.go.mem.heap_alloc",
-					"Description": "Bytes of allocated heap objects",
-					"Unit": "By",
-					"Data": {
-						"DataPoints": [
-							{
-								"Attributes": [],
-								"StartTime": "2025-06-03T23:10:28.137841157+01:00",
-								"Time": "2025-06-03T23:10:31.162618448+01:00",
-								"Value": 3827240
-							}
-						],
-						"Temporality": "CumulativeTemporality",
-						"IsMonotonic": false
-					}
-				},
-				{
-					"Name": "process.runtime.go.mem.heap_idle",
-					"Description": "Bytes in idle (unused) spans",
-					"Unit": "By",
-					"Data": {
-						"DataPoints": [
-							{
-								"Attributes": [],
-								"StartTime": "2025-06-03T23:10:28.137896403+01:00",
-								"Time": "2025-06-03T23:10:31.162659646+01:00",
-								"Value": 1613824
-							}
-						],
-						"Temporality": "CumulativeTemporality",
-						"IsMonotonic": false
-					}
-				},
-				{
-					"Name": "process.runtime.go.mem.heap_inuse",
-					"Description": "Bytes in in-use spans",
-					"Unit": "By",
-					"Data": {
-						"DataPoints": [
-							{
-								"Attributes": [],
-								"StartTime": "2025-06-03T23:10:28.137946838+01:00",
-								"Time": "2025-06-03T23:10:31.162914396+01:00",
-								"Value": 5595136
-							}
-						],
-						"Temporality": "CumulativeTemporality",
-						"IsMonotonic": false
-					}
-				},
-				{
-					"Name": "process.runtime.go.mem.heap_objects",
-					"Description": "Number of allocated heap objects",
-					"Unit": "",
-					"Data": {
-						"DataPoints": [
-							{
-								"Attributes": [],
-								"StartTime": "2025-06-03T23:10:28.1379921+01:00",
-								"Time": "2025-06-03T23:10:31.162943769+01:00",
-								"Value": 11928
-							}
-						],
-						"Temporality": "CumulativeTemporality",
-						"IsMonotonic": false
-					}
-				},
-				{
-					"Name": "process.runtime.go.mem.heap_released",
-					"Description": "Bytes of idle spans whose physical memory has been returned to the OS",
-					"Unit": "By",
-					"Data": {
-						"DataPoints": [
-							{
-								"Attributes": [],
-								"StartTime": "2025-06-03T23:10:28.13803483+01:00",
-								"Time": "2025-06-03T23:10:31.162954843+01:00",
-								"Value": 974848
-							}
-						],
-						"Temporality": "CumulativeTemporality",
-						"IsMonotonic": false
-					}
-				},
-				{
-					"Name": "process.runtime.go.mem.heap_sys",
-					"Description": "Bytes of heap memory obtained from the OS",
-					"Unit": "By",
-					"Data": {
-						"DataPoints": [
-							{
-								"Attributes": [],
-								"StartTime": "2025-06-03T23:10:28.138082396+01:00",
-								"Time": "2025-06-03T23:10:31.162965926+01:00",
-								"Value": 7208960
-							}
-						],
-						"Temporality": "CumulativeTemporality",
-						"IsMonotonic": false
-					}
-				},
-				{
-					"Name": "process.runtime.go.mem.lookups",
-					"Description": "Number of pointer lookups performed by the runtime",
-					"Unit": "",
-					"Data": {
-						"DataPoints": [
-							{
-								"Attributes": [],
-								"StartTime": "2025-06-03T23:10:28.138151401+01:00",
-								"Time": "2025-06-03T23:10:31.162973563+01:00",
-								"Value": 0
-							}
-						],
-						"Temporality": "CumulativeTemporality",
-						"IsMonotonic": true
-					}
-				},
-				{
-					"Name": "process.runtime.go.mem.live_objects",
-					"Description": "Number of live objects is the number of cumulative Mallocs - Frees",
-					"Unit": "",
-					"Data": {
-						"DataPoints": [
-							{
-								"Attributes": [],
-								"StartTime": "2025-06-03T23:10:28.138188949+01:00",
-								"Time": "2025-06-03T23:10:31.162980129+01:00",
-								"Value": 11928
-							}
-						],
-						"Temporality": "CumulativeTemporality",
-						"IsMonotonic": false
-					}
-				},
-				{
-					"Name": "process.runtime.go.gc.count",
-					"Description": "Number of completed garbage collection cycles",
-					"Unit": "",
-					"Data": {
-						"DataPoints": [
-							{
-								"Attributes": [],
-								"StartTime": "2025-06-03T23:10:28.138226414+01:00",
-								"Time": "2025-06-03T23:10:31.162986078+01:00",
-								"Value": 289
-							}
-						],
-						"Temporality": "CumulativeTemporality",
-						"IsMonotonic": true
-					}
-				},
-				{
-					"Name": "process.runtime.go.gc.pause_total_ns",
-					"Description": "Cumulative nanoseconds in GC stop-the-world pauses since the program started",
-					"Unit": "",
-					"Data": {
-						"DataPoints": [
-							{
-								"Attributes": [],
-								"StartTime": "2025-06-03T23:10:28.138263311+01:00",
-								"Time": "2025-06-03T23:10:31.162992849+01:00",
-								"Value": 13869686
-							}
-						],
-						"Temporality": "CumulativeTemporality",
-						"IsMonotonic": true
-					}
-				},
-				{
-					"Name": "process.runtime.go.gc.pause_ns",
-					"Description": "Amount of nanoseconds in GC stop-the-world pauses",
-					"Unit": "",
-					"Data": {
-						"DataPoints": [
-							{
-								"Attributes": [],
-								"StartTime": "2025-06-03T23:10:28.13834307+01:00",
-								"Time": "2025-06-03T23:10:31.162999085+01:00",
-								"Count": 256,
-								"Bounds": [
-									0,
-									5,
-									10,
-									25,
-									50,
-									75,
-									100,
-									250,
-									500,
-									750,
-									1000,
-									2500,
-									5000,
-									7500,
-									10000
-								],
-								"BucketCounts": [
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									256
-								],
-								"Min": 16000,
-								"Max": 174414,
-								"Sum": 11582723
 							}
 						],
 						"Temporality": "CumulativeTemporality"

@@ -18,8 +18,10 @@ require (
 	github.com/bmatcuk/doublestar/v4 v4.6.1 // indirect
 	github.com/casbin/govaluate v1.3.0 // indirect
 	github.com/cenkalti/backoff/v5 v5.0.2 // indirect
+	github.com/fsnotify/fsnotify v1.8.0 // indirect
 	github.com/go-logr/logr v1.4.2 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
+	github.com/go-viper/mapstructure/v2 v2.2.1 // indirect
 	github.com/golang/protobuf v1.5.4 // indirect
 	github.com/google/btree v1.1.2 // indirect
 	github.com/google/go-cmp v0.7.0 // indirect
@@ -38,12 +40,22 @@ require (
 	github.com/hashicorp/raft v1.1.1 // indirect
 	github.com/hashicorp/raft-boltdb v0.0.0-20250603080355-5acfa2a95991 // indirect
 	github.com/hashicorp/serf v0.10.2 // indirect
+	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/kr/pretty v0.3.1 // indirect
 	github.com/miekg/dns v1.1.56 // indirect
+	github.com/pelletier/go-toml/v2 v2.2.3 // indirect
 	github.com/rogpeppe/go-internal v1.13.1 // indirect
+	github.com/sagikazarmark/locafero v0.7.0 // indirect
 	github.com/sean-/seed v0.0.0-20170313163322-e2103e2c3529 // indirect
 	github.com/soheilhy/cmux v0.1.5 // indirect
+	github.com/sourcegraph/conc v0.3.0 // indirect
+	github.com/spf13/afero v1.12.0 // indirect
+	github.com/spf13/cast v1.7.1 // indirect
+	github.com/spf13/cobra v1.9.1 // indirect
+	github.com/spf13/pflag v1.0.6 // indirect
+	github.com/spf13/viper v1.20.1 // indirect
 	github.com/stretchr/testify v1.10.0 // indirect
+	github.com/subosito/gotenv v1.6.0 // indirect
 	github.com/travisjeffery/go-dynaport v1.0.0 // indirect
 	go.etcd.io/bbolt v1.3.5 // indirect
 	go.opentelemetry.io/auto/sdk v1.1.0 // indirect
@@ -59,6 +71,9 @@ require (
 	go.opentelemetry.io/otel/sdk/metric v1.36.0 // indirect
 	go.opentelemetry.io/otel/trace v1.36.0 // indirect
 	go.opentelemetry.io/proto/otlp v1.6.0 // indirect
+	go.uber.org/atomic v1.9.0 // indirect
+	go.uber.org/mock v0.5.2 // indirect
+	go.uber.org/multierr v1.9.0 // indirect
 	golang.org/x/mod v0.18.0 // indirect
 	golang.org/x/net v0.40.0 // indirect
 	golang.org/x/sync v0.14.0 // indirect
@@ -67,6 +82,7 @@ require (
 	golang.org/x/tools v0.22.0 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20250519155744-55703ea1f237 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20250519155744-55703ea1f237 // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
 replace github.com/hashicorp/raft-boltdb => github.com/travisjeffery/raft-boltdb v1.0.0
