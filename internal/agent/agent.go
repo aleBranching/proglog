@@ -6,6 +6,9 @@ import (
 	"fmt"
 	"io"
 	"net"
+	"reflect"
+	"runtime"
+	"runtime/debug"
 	"sync"
 	"time"
 
@@ -35,7 +38,7 @@ type Config struct {
 	Bootstrap bool
 }
 type Agent struct {
-	Config
+	Config Config
 
 	// Different services
 	mux        cmux.CMux
@@ -74,6 +77,13 @@ func New(config Config) (*Agent, error) {
 
 	for _, fn := range setup {
 		if err := fn(); err != nil {
+			pc := runtime.FuncForPC(reflect.ValueOf(fn).Pointer())
+			if pc != nil {
+				fmt.Printf("Error in function: %s\n", pc.Name())
+			} else {
+				fmt.Println("Error in function: unknown")
+			}
+			debug.PrintStack()
 			return nil, err
 		}
 	}
@@ -82,7 +92,11 @@ func New(config Config) (*Agent, error) {
 }
 
 func (a *Agent) setupMux() error {
-	rcpAddr := fmt.Sprintf(":%d", a.Config.RCPPort)
+	addr, err := net.ResolveTCPAddr("tcp", a.Config.BindAddr)
+	if err != nil {
+		return err
+	}
+	rcpAddr := fmt.Sprintf("%s:%d", addr.IP.String(), a.Config.RCPPort)
 	ln, err := net.Listen("tcp", rcpAddr)
 	if err != nil {
 		return err
@@ -113,12 +127,17 @@ func (a *Agent) setupLog() error {
 		}
 		return bytes.Equal(b, []byte{byte(log.RaftRCP)})
 	})
+	var err error
 
 	logConfig := log.Config{}
 	logConfig.Raft.StreamLayer = log.NewStreamLayer(raftLn, a.Config.ServerTLSConfig, a.Config.PeerTLSConfig)
+	rpcAddr, err := a.Config.RCPAddr()
+	if err != nil {
+		return err
+	}
+	logConfig.Raft.BindAddr = rpcAddr
 	logConfig.Raft.LocalID = raft.ServerID(a.Config.NodeName)
 	logConfig.Raft.Bootstrap = a.Config.Bootstrap
-	var err error
 	a.log, err = log.NewDistributedLog(a.Config.DataDir, logConfig)
 	if err != nil {
 		return err
@@ -135,7 +154,7 @@ func (a *Agent) setupServer() error {
 		a.Config.ACLPolicyFile,
 	)
 	if err != nil {
-		return err
+		return fmt.Errorf("failed to setup authorizer: %w", err)
 	}
 	serverConfig := &server.Config{
 		CommitLog:   a.log,
@@ -151,7 +170,7 @@ func (a *Agent) setupServer() error {
 	}
 	a.server, err = server.NewGRPCServer(serverConfig, opts...)
 	if err != nil {
-		return err
+		return fmt.Errorf("failed to setup grpc server: %w", err)
 	}
 	// rcpAddr, err := a.RCPAddr()
 	// if err != nil {

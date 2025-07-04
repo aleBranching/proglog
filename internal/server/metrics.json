@@ -25,9 +25,9 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-06-12T18:38:08.105209844+01:00",
-								"Time": "2025-06-12T18:38:11.129287146+01:00",
-								"Value": 3023
+								"StartTime": "2025-07-02T17:13:28.070050816+01:00",
+								"Time": "2025-07-02T17:13:31.082225345+01:00",
+								"Value": 3011
 							}
 						],
 						"Temporality": "CumulativeTemporality",
@@ -42,8 +42,8 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-06-12T18:38:08.105246178+01:00",
-								"Time": "2025-06-12T18:38:11.129313266+01:00",
+								"StartTime": "2025-07-02T17:13:28.07006919+01:00",
+								"Time": "2025-07-02T17:13:31.08224783+01:00",
 								"Value": 20
 							}
 						],
@@ -59,8 +59,8 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-06-12T18:38:08.105271844+01:00",
-								"Time": "2025-06-12T18:38:11.129323424+01:00",
+								"StartTime": "2025-07-02T17:13:28.070080915+01:00",
+								"Time": "2025-07-02T17:13:31.082257454+01:00",
 								"Value": 1
 							}
 						],
@@ -76,9 +76,9 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-06-12T18:38:08.105305646+01:00",
-								"Time": "2025-06-12T18:38:11.129332011+01:00",
-								"Value": 1743552
+								"StartTime": "2025-07-02T17:13:28.070097889+01:00",
+								"Time": "2025-07-02T17:13:31.082266628+01:00",
+								"Value": 1566120
 							}
 						],
 						"Temporality": "CumulativeTemporality",
@@ -93,9 +93,9 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-06-12T18:38:08.105332237+01:00",
-								"Time": "2025-06-12T18:38:11.129340988+01:00",
-								"Value": 3579904
+								"StartTime": "2025-07-02T17:13:28.070107824+01:00",
+								"Time": "2025-07-02T17:13:31.082274413+01:00",
+								"Value": 7913472
 							}
 						],
 						"Temporality": "CumulativeTemporality",
@@ -110,9 +110,9 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-06-12T18:38:08.105351509+01:00",
-								"Time": "2025-06-12T18:38:11.129349194+01:00",
-								"Value": 3792896
+								"StartTime": "2025-07-02T17:13:28.070116766+01:00",
+								"Time": "2025-07-02T17:13:31.082287134+01:00",
+								"Value": 3620864
 							}
 						],
 						"Temporality": "CumulativeTemporality",
@@ -127,9 +127,9 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-06-12T18:38:08.105368288+01:00",
-								"Time": "2025-06-12T18:38:11.129356788+01:00",
-								"Value": 7224
+								"StartTime": "2025-07-02T17:13:28.070124825+01:00",
+								"Time": "2025-07-02T17:13:31.08229501+01:00",
+								"Value": 6867
 							}
 						],
 						"Temporality": "CumulativeTemporality",
@@ -144,9 +144,9 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-06-12T18:38:08.10538438+01:00",
-								"Time": "2025-06-12T18:38:11.129364411+01:00",
-								"Value": 2342912
+								"StartTime": "2025-07-02T17:13:28.070132549+01:00",
+								"Time": "2025-07-02T17:13:31.082302242+01:00",
+								"Value": 6651904
 							}
 						],
 						"Temporality": "CumulativeTemporality",
@@ -161,9 +161,9 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-06-12T18:38:08.105402031+01:00",
-								"Time": "2025-06-12T18:38:11.129381328+01:00",
-								"Value": 7372800
+								"StartTime": "2025-07-02T17:13:28.070142709+01:00",
+								"Time": "2025-07-02T17:13:31.082309485+01:00",
+								"Value": 11534336
 							}
 						],
 						"Temporality": "CumulativeTemporality",
@@ -178,8 +178,8 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-06-12T18:38:08.105429454+01:00",
-								"Time": "2025-06-12T18:38:11.12938834+01:00",
+								"StartTime": "2025-07-02T17:13:28.070155113+01:00",
+								"Time": "2025-07-02T17:13:31.082320426+01:00",
 								"Value": 0
 							}
 						],
@@ -195,9 +195,9 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-06-12T18:38:08.105446504+01:00",
-								"Time": "2025-06-12T18:38:11.129397604+01:00",
-								"Value": 7224
+								"StartTime": "2025-07-02T17:13:28.070163662+01:00",
+								"Time": "2025-07-02T17:13:31.082327976+01:00",
+								"Value": 6867
 							}
 						],
 						"Temporality": "CumulativeTemporality",
@@ -212,9 +212,9 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-06-12T18:38:08.105462465+01:00",
-								"Time": "2025-06-12T18:38:11.129404956+01:00",
-								"Value": 324
+								"StartTime": "2025-07-02T17:13:28.070172211+01:00",
+								"Time": "2025-07-02T17:13:31.082340535+01:00",
+								"Value": 363
 							}
 						],
 						"Temporality": "CumulativeTemporality",
@@ -229,9 +229,9 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-06-12T18:38:08.105477877+01:00",
-								"Time": "2025-06-12T18:38:11.129412192+01:00",
-								"Value": 13296810
+								"StartTime": "2025-07-02T17:13:28.070180407+01:00",
+								"Time": "2025-07-02T17:13:31.082347993+01:00",
+								"Value": 13330899
 							}
 						],
 						"Temporality": "CumulativeTemporality",
@@ -246,8 +246,8 @@
 						"DataPoints": [
 							{
 								"Attributes": [],
-								"StartTime": "2025-06-12T18:38:08.10550552+01:00",
-								"Time": "2025-06-12T18:38:11.12942372+01:00",
+								"StartTime": "2025-07-02T17:13:28.070195004+01:00",
+								"Time": "2025-07-02T17:13:31.08235536+01:00",
 								"Count": 256,
 								"Bounds": [
 									0,
@@ -284,9 +284,9 @@
 									0,
 									256
 								],
-								"Min": 17530,
-								"Max": 158862,
-								"Sum": 10136785
+								"Min": 11546,
+								"Max": 196383,
+								"Sum": 9103330
 							}
 						],
 						"Temporality": "CumulativeTemporality"
@@ -339,8 +339,8 @@
 										}
 									}
 								],
-								"StartTime": "2025-06-12T18:38:08.112471509+01:00",
-								"Time": "2025-06-12T18:38:11.129452524+01:00",
+								"StartTime": "2025-07-02T17:13:28.072788426+01:00",
+								"Time": "2025-07-02T17:13:31.082381377+01:00",
 								"Count": 1,
 								"Bounds": [
 									0,
@@ -377,16 +377,16 @@
 									0,
 									0
 								],
-								"Min": 0.295443,
-								"Max": 0.295443,
-								"Sum": 0.295443,
+								"Min": 0.141273,
+								"Max": 0.141273,
+								"Sum": 0.141273,
 								"Exemplars": [
 									{
 										"FilteredAttributes": null,
-										"Time": "2025-06-12T18:38:08.124741498+01:00",
-										"Value": 0.295443,
-										"SpanID": "EFzZqLxaRCk=",
-										"TraceID": "VI9kiNeStYmwpfcqwgvfKg=="
+										"Time": "2025-07-02T17:13:28.079002286+01:00",
+										"Value": 0.141273,
+										"SpanID": "aaOLx5WQy5Q=",
+										"TraceID": "kUsUgntMImUqYhK0XQop6g=="
 									}
 								]
 							},
@@ -421,8 +421,8 @@
 										}
 									}
 								],
-								"StartTime": "2025-06-12T18:38:08.112471509+01:00",
-								"Time": "2025-06-12T18:38:11.129452524+01:00",
+								"StartTime": "2025-07-02T17:13:28.072788426+01:00",
+								"Time": "2025-07-02T17:13:31.082381377+01:00",
 								"Count": 1,
 								"Bounds": [
 									0,
@@ -459,16 +459,16 @@
 									0,
 									0
 								],
-								"Min": 0.160579,
-								"Max": 0.160579,
-								"Sum": 0.160579,
+								"Min": 0.143131,
+								"Max": 0.143131,
+								"Sum": 0.143131,
 								"Exemplars": [
 									{
 										"FilteredAttributes": null,
-										"Time": "2025-06-12T18:38:08.125541961+01:00",
-										"Value": 0.160579,
-										"SpanID": "bYmk24AMEk8=",
-										"TraceID": "bwV1f0B9t6tyAIjXdwRucQ=="
+										"Time": "2025-07-02T17:13:28.079829523+01:00",
+										"Value": 0.143131,
+										"SpanID": "PlctmNxcAp4=",
+										"TraceID": "kVGvbruNLVC+jGRdCbD6Xw=="
 									}
 								]
 							}
@@ -482,81 +482,6 @@
 					"Unit": "By",
 					"Data": {
 						"DataPoints": [
-							{
-								"Attributes": [
-									{
-										"Key": "rpc.method",
-										"Value": {
-											"Type": "STRING",
-											"Value": "Consume"
-										}
-									},
-									{
-										"Key": "rpc.service",
-										"Value": {
-											"Type": "STRING",
-											"Value": "log.v1.Log"
-										}
-									},
-									{
-										"Key": "rpc.system",
-										"Value": {
-											"Type": "STRING",
-											"Value": "grpc"
-										}
-									}
-								],
-								"StartTime": "2025-06-12T18:38:08.112527651+01:00",
-								"Time": "2025-06-12T18:38:11.129493062+01:00",
-								"Count": 1,
-								"Bounds": [
-									0,
-									5,
-									10,
-									25,
-									50,
-									75,
-									100,
-									250,
-									500,
-									750,
-									1000,
-									2500,
-									5000,
-									7500,
-									10000
-								],
-								"BucketCounts": [
-									1,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0,
-									0
-								],
-								"Min": 0,
-								"Max": 0,
-								"Sum": 0,
-								"Exemplars": [
-									{
-										"FilteredAttributes": null,
-										"Time": "2025-06-12T18:38:08.12540402+01:00",
-										"Value": 0,
-										"SpanID": "bYmk24AMEk8=",
-										"TraceID": "bwV1f0B9t6tyAIjXdwRucQ=="
-									}
-								]
-							},
 							{
 								"Attributes": [
 									{
@@ -581,8 +506,8 @@
 										}
 									}
 								],
-								"StartTime": "2025-06-12T18:38:08.112527651+01:00",
-								"Time": "2025-06-12T18:38:11.129493062+01:00",
+								"StartTime": "2025-07-02T17:13:28.072806634+01:00",
+								"Time": "2025-07-02T17:13:31.082410073+01:00",
 								"Count": 1,
 								"Bounds": [
 									0,
@@ -625,10 +550,85 @@
 								"Exemplars": [
 									{
 										"FilteredAttributes": null,
-										"Time": "2025-06-12T18:38:08.124485403+01:00",
+										"Time": "2025-07-02T17:13:28.078876475+01:00",
 										"Value": 15,
-										"SpanID": "EFzZqLxaRCk=",
-										"TraceID": "VI9kiNeStYmwpfcqwgvfKg=="
+										"SpanID": "aaOLx5WQy5Q=",
+										"TraceID": "kUsUgntMImUqYhK0XQop6g=="
+									}
+								]
+							},
+							{
+								"Attributes": [
+									{
+										"Key": "rpc.method",
+										"Value": {
+											"Type": "STRING",
+											"Value": "Consume"
+										}
+									},
+									{
+										"Key": "rpc.service",
+										"Value": {
+											"Type": "STRING",
+											"Value": "log.v1.Log"
+										}
+									},
+									{
+										"Key": "rpc.system",
+										"Value": {
+											"Type": "STRING",
+											"Value": "grpc"
+										}
+									}
+								],
+								"StartTime": "2025-07-02T17:13:28.072806634+01:00",
+								"Time": "2025-07-02T17:13:31.082410073+01:00",
+								"Count": 1,
+								"Bounds": [
+									0,
+									5,
+									10,
+									25,
+									50,
+									75,
+									100,
+									250,
+									500,
+									750,
+									1000,
+									2500,
+									5000,
+									7500,
+									10000
+								],
+								"BucketCounts": [
+									1,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0,
+									0
+								],
+								"Min": 0,
+								"Max": 0,
+								"Sum": 0,
+								"Exemplars": [
+									{
+										"FilteredAttributes": null,
+										"Time": "2025-07-02T17:13:28.079704709+01:00",
+										"Value": 0,
+										"SpanID": "PlctmNxcAp4=",
+										"TraceID": "kVGvbruNLVC+jGRdCbD6Xw=="
 									}
 								]
 							}
@@ -673,8 +673,8 @@
 										}
 									}
 								],
-								"StartTime": "2025-06-12T18:38:08.112590358+01:00",
-								"Time": "2025-06-12T18:38:11.129527821+01:00",
+								"StartTime": "2025-07-02T17:13:28.072839577+01:00",
+								"Time": "2025-07-02T17:13:31.082438241+01:00",
 								"Count": 1,
 								"Bounds": [
 									0,
@@ -717,10 +717,10 @@
 								"Exemplars": [
 									{
 										"FilteredAttributes": null,
-										"Time": "2025-06-12T18:38:08.125549122+01:00",
+										"Time": "2025-07-02T17:13:28.079835947+01:00",
 										"Value": 1,
-										"SpanID": "bYmk24AMEk8=",
-										"TraceID": "bwV1f0B9t6tyAIjXdwRucQ=="
+										"SpanID": "PlctmNxcAp4=",
+										"TraceID": "kVGvbruNLVC+jGRdCbD6Xw=="
 									}
 								]
 							},
@@ -755,8 +755,8 @@
 										}
 									}
 								],
-								"StartTime": "2025-06-12T18:38:08.112590358+01:00",
-								"Time": "2025-06-12T18:38:11.129527821+01:00",
+								"StartTime": "2025-07-02T17:13:28.072839577+01:00",
+								"Time": "2025-07-02T17:13:31.082438241+01:00",
 								"Count": 1,
 								"Bounds": [
 									0,
@@ -799,10 +799,10 @@
 								"Exemplars": [
 									{
 										"FilteredAttributes": null,
-										"Time": "2025-06-12T18:38:08.124749786+01:00",
+										"Time": "2025-07-02T17:13:28.079104401+01:00",
 										"Value": 1,
-										"SpanID": "EFzZqLxaRCk=",
-										"TraceID": "VI9kiNeStYmwpfcqwgvfKg=="
+										"SpanID": "aaOLx5WQy5Q=",
+										"TraceID": "kUsUgntMImUqYhK0XQop6g=="
 									}
 								]
 							}
@@ -847,8 +847,8 @@
 										}
 									}
 								],
-								"StartTime": "2025-06-12T18:38:08.112612006+01:00",
-								"Time": "2025-06-12T18:38:11.12954628+01:00",
+								"StartTime": "2025-07-02T17:13:28.072849847+01:00",
+								"Time": "2025-07-02T17:13:31.082462716+01:00",
 								"Count": 1,
 								"Bounds": [
 									0,
@@ -891,10 +891,10 @@
 								"Exemplars": [
 									{
 										"FilteredAttributes": null,
-										"Time": "2025-06-12T18:38:08.12475558+01:00",
+										"Time": "2025-07-02T17:13:28.079109622+01:00",
 										"Value": 0,
-										"SpanID": "EFzZqLxaRCk=",
-										"TraceID": "VI9kiNeStYmwpfcqwgvfKg=="
+										"SpanID": "aaOLx5WQy5Q=",
+										"TraceID": "kUsUgntMImUqYhK0XQop6g=="
 									}
 								]
 							},
@@ -929,8 +929,8 @@
 										}
 									}
 								],
-								"StartTime": "2025-06-12T18:38:08.112612006+01:00",
-								"Time": "2025-06-12T18:38:11.12954628+01:00",
+								"StartTime": "2025-07-02T17:13:28.072849847+01:00",
+								"Time": "2025-07-02T17:13:31.082462716+01:00",
 								"Count": 1,
 								"Bounds": [
 									0,
@@ -973,10 +973,10 @@
 								"Exemplars": [
 									{
 										"FilteredAttributes": null,
-										"Time": "2025-06-12T18:38:08.125554123+01:00",
+										"Time": "2025-07-02T17:13:28.079840496+01:00",
 										"Value": 0,
-										"SpanID": "bYmk24AMEk8=",
-										"TraceID": "bwV1f0B9t6tyAIjXdwRucQ=="
+										"SpanID": "PlctmNxcAp4=",
+										"TraceID": "kVGvbruNLVC+jGRdCbD6Xw=="
 									}
 								]
 							}

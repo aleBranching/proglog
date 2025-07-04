@@ -105,8 +105,9 @@ func (l *DistributedLog) setupRaft(dataDir string) error {
 		config := raft.Configuration{
 			Servers: []raft.Server{
 				{
-					ID:      config.LocalID,
-					Address: transport.LocalAddr(),
+					ID: config.LocalID,
+					// Address: transport.LocalAddr(),
+					Address: raft.ServerAddress(l.config.Raft.BindAddr),
 				},
 			},
 		}
