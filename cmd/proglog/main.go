@@ -106,7 +106,7 @@ func (c *cli) setupConfig(cmd *cobra.Command, args []string) error {
 	c.cfg.RCPPort = viper.GetInt("rpc-port")
 	c.cfg.StartJoindAddrs = viper.GetStringSlice("start-join-addrs")
 	c.cfg.Bootstrap = viper.GetBool("bootstrap")
-	c.cfg.ACLModelFile = viper.GetString("acl-mode-file")
+	c.cfg.ACLModelFile = viper.GetString("acl-model-file")
 	c.cfg.ACLPolicyFile = viper.GetString("acl-policy-file")
 	c.cfg.ServerTLSConfig.CertFile = viper.GetString("server-tls-cert-file")
 	c.cfg.ServerTLSConfig.KeyFile = viper.GetString("server-tls-key-file")

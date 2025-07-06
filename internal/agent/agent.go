@@ -88,6 +88,8 @@ func New(config Config) (*Agent, error) {
 		}
 	}
 	go a.serve()
+
+	fmt.Println("finished setting up a new agent")
 	return a, nil
 }
 
@@ -97,6 +99,8 @@ func (a *Agent) setupMux() error {
 		return err
 	}
 	rcpAddr := fmt.Sprintf("%s:%d", addr.IP.String(), a.Config.RCPPort)
+	// rcpAddr := fmt.Sprintf(":%d", a.Config.RCPPort)
+
 	ln, err := net.Listen("tcp", rcpAddr)
 	if err != nil {
 		return err
@@ -130,17 +134,18 @@ func (a *Agent) setupLog() error {
 	var err error
 
 	logConfig := log.Config{}
+
 	logConfig.Raft.StreamLayer = log.NewStreamLayer(raftLn, a.Config.ServerTLSConfig, a.Config.PeerTLSConfig)
 	rpcAddr, err := a.Config.RCPAddr()
 	if err != nil {
-		return err
+		return fmt.Errorf("failed to get rpc addr %w", err)
 	}
 	logConfig.Raft.BindAddr = rpcAddr
 	logConfig.Raft.LocalID = raft.ServerID(a.Config.NodeName)
 	logConfig.Raft.Bootstrap = a.Config.Bootstrap
 	a.log, err = log.NewDistributedLog(a.Config.DataDir, logConfig)
 	if err != nil {
-		return err
+		return fmt.Errorf("to start a new distributed log %w", err)
 	}
 	if a.Config.Bootstrap {
 		return a.log.WaitForLeader(3 * time.Second)

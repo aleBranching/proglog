@@ -1,7 +1,7 @@
 # Default values for proglog.
 image:
   repository: github.com/alebranching/proglog
-  tag: 0.0.2
+  tag: debug
   pullPolicy: IfNotPresent
 serfPort: 8401
 rpcPort: 8400

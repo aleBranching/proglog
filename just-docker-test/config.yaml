@@ -2,4 +2,6 @@ data-dir: /tmp/proglog
 rpc-port: 8400
 bind-addr: "127.0.0.1:8401"
 bootstrap: true
+acl-model-file: /etc/proglog/acl/model.conf
+acl-policy-file: /etc/proglog/acl/policy.csv
 
